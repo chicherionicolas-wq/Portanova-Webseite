@@ -1,0 +1,262 @@
+{
+  "items": [
+    {
+      "start": "2026-04-02",
+      "end": "2026-04-06",
+      "title": "Ostern (schulfrei)",
+      "category": "frei"
+    },
+    {
+      "start": "2026-04-08",
+      "end": "2026-04-08",
+      "title": "Besuchsmorgen (Intern)",
+      "category": "event"
+    },
+    {
+      "start": "2026-04-17",
+      "end": "2026-04-17",
+      "title": "Schulschluss um 12.00 Uhr",
+      "category": "frei"
+    },
+    {
+      "start": "2026-04-20",
+      "end": "2026-05-01",
+      "title": "Frühlingsferien",
+      "category": "ferien"
+    },
+    {
+      "start": "2026-05-05",
+      "end": "2026-05-08",
+      "title": "Sprach- und Kulturreise nach Frankreich – 10. SJ",
+      "category": "event"
+    },
+    {
+      "start": "2026-05-14",
+      "end": "2026-05-15",
+      "title": "Auffahrt (schulfrei)",
+      "category": "frei"
+    },
+    {
+      "start": "2026-05-25",
+      "end": "2026-05-25",
+      "title": "Pfingstmontag (schulfrei)",
+      "category": "frei"
+    },
+    {
+      "start": "2026-06-14",
+      "end": "2026-06-19",
+      "title": "Sprach- und Kulturreise nach Wales – Sek 2",
+      "category": "event"
+    },
+    {
+      "start": "2026-06-15",
+      "end": "2026-06-19",
+      "title": "Sprach- und Kulturreise nach München – Sek 1",
+      "category": "event"
+    },
+    {
+      "start": "2026-06-17",
+      "end": "2026-06-21",
+      "title": "Sprach- und Kulturreise nach Südfrankreich – Sek 3",
+      "category": "event"
+    },
+    {
+      "start": "2026-06-22",
+      "end": "2026-06-25",
+      "title": "Sprach- und Kulturreise Bündnerland – 6. Klasse",
+      "category": "event"
+    },
+    {
+      "start": "2026-07-06",
+      "end": "2026-07-06",
+      "title": "Nothelferkurs",
+      "category": "event"
+    },
+    {
+      "start": "2026-07-07",
+      "end": "2026-07-07",
+      "title": "Familien Sommerfest",
+      "category": "event"
+    },
+    {
+      "start": "2026-07-08",
+      "end": "2026-08-14",
+      "title": "Sommerferien",
+      "category": "ferien"
+    },
+    {
+      "start": "2026-08-28",
+      "end": "2026-08-31",
+      "title": "Tenero Sportlager (alle Stufen)",
+      "category": "event"
+    },
+    {
+      "start": "2026-09-01",
+      "end": "2026-09-01",
+      "title": "Schulfrei (ganzer Tag – alle Stufen)",
+      "category": "frei"
+    },
+    {
+      "start": "2026-09-14",
+      "end": "2026-09-14",
+      "title": "Knabenschiessen (ganzer Tag schulfrei)",
+      "category": "frei"
+    },
+    {
+      "start": "2026-09-15",
+      "end": "2026-09-15",
+      "title": "Elternabend 2. Sek mit Apéro 19 Uhr",
+      "category": "event"
+    },
+    {
+      "start": "2026-09-17",
+      "end": "2026-09-17",
+      "title": "Elternabend 1. Sek mit Apéro 19 Uhr",
+      "category": "event"
+    },
+    {
+      "start": "2026-09-21",
+      "end": "2026-09-21",
+      "title": "Elternabend 6. Klasse mit Apéro 19 Uhr",
+      "category": "event"
+    },
+    {
+      "start": "2026-09-23",
+      "end": "2026-09-23",
+      "title": "Elternabend 3. Sek mit Apéro 19 Uhr",
+      "category": "event"
+    },
+    {
+      "start": "2026-10-02",
+      "end": "2026-10-02",
+      "title": "Schulschluss um 12.00 Uhr",
+      "category": "frei"
+    },
+    {
+      "start": "2026-10-05",
+      "end": "2026-10-16",
+      "title": "Herbstferien",
+      "category": "ferien"
+    },
+    {
+      "start": "2026-11-07",
+      "end": "2026-11-07",
+      "title": "Besuchsmorgen intern",
+      "category": "event"
+    },
+    {
+      "start": "2026-11-12",
+      "end": "2026-11-12",
+      "title": "Nationaler Zukunftstag (6. Klasse und 1. Sek)",
+      "category": "event"
+    },
+    {
+      "start": "2026-12-02",
+      "end": "2026-12-02",
+      "title": "Familien-Weihnachtsfeier",
+      "category": "event"
+    },
+    {
+      "start": "2026-12-14",
+      "end": "2026-12-17",
+      "title": "Projekt- und Lerngruppentage",
+      "category": "event"
+    },
+    {
+      "start": "2026-12-17",
+      "end": "2026-12-17",
+      "title": "Eislaufen / Hockey",
+      "category": "event"
+    },
+    {
+      "start": "2026-12-18",
+      "end": "2026-12-18",
+      "title": "Schulschluss 12.00 Uhr",
+      "category": "frei"
+    },
+    {
+      "start": "2026-12-21",
+      "end": "2027-01-01",
+      "title": "Weihnachtsferien",
+      "category": "ferien"
+    },
+    {
+      "start": "2027-02-09",
+      "end": "2027-02-09",
+      "title": "Skitag 6. Klasse Hoch-Ybrig",
+      "category": "event"
+    },
+    {
+      "start": "2027-02-12",
+      "end": "2027-02-12",
+      "title": "Schulschluss um 12.00 Uhr",
+      "category": "frei"
+    },
+    {
+      "start": "2027-02-15",
+      "end": "2027-02-26",
+      "title": "Sportferien",
+      "category": "ferien"
+    },
+    {
+      "start": "2027-03-11",
+      "end": "2027-03-12",
+      "title": "Iglu inkl. Übernachtung (3. Sek)",
+      "category": "event"
+    },
+    {
+      "start": "2027-03-12",
+      "end": "2027-03-12",
+      "title": "Skitag 1.–3. Sek Davos",
+      "category": "event"
+    },
+    {
+      "start": "2027-03-25",
+      "end": "2027-03-29",
+      "title": "Ostern (schulfrei)",
+      "category": "frei"
+    },
+    {
+      "start": "2027-04-07",
+      "end": "2027-04-07",
+      "title": "Besuchsmorgen intern",
+      "category": "event"
+    },
+    {
+      "start": "2027-04-23",
+      "end": "2027-04-23",
+      "title": "Schulschluss um 12.00 Uhr",
+      "category": "frei"
+    },
+    {
+      "start": "2027-04-26",
+      "end": "2027-05-07",
+      "title": "Frühlingsferien",
+      "category": "ferien"
+    },
+    {
+      "start": "2027-05-17",
+      "end": "2027-05-17",
+      "title": "Pfingstmontag (schulfrei)",
+      "category": "frei"
+    },
+    {
+      "start": "2027-05-18",
+      "end": "2027-05-22",
+      "title": "Sprach- und Kulturreise nach Südfrankreich",
+      "category": "event"
+    },
+    {
+      "start": "2027-07-13",
+      "end": "2027-07-13",
+      "title": "Familien Sommerfest",
+      "category": "event"
+    },
+    {
+      "start": "2027-07-19",
+      "end": "2027-08-20",
+      "title": "Sommerferien",
+      "category": "ferien"
+    }
+  ]
+}

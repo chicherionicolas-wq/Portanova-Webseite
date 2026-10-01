@@ -1,0 +1,223 @@
+# Decap CMS – Konfiguration für die Portanova-Website
+# Lokal: start-cms.command doppelklicken → http://localhost:8080/admin/
+# Online: unter "backend" das GitHub-Repository eintragen (siehe CMS-ANLEITUNG.md).
+
+locale: de
+
+backend:
+  name: github
+  repo: DEIN-GITHUB-NAME/portanova-site   # TODO beim Online-Gang anpassen
+  branch: main
+  commit_messages:
+    update: "Inhalt aktualisiert: {{path}}"
+    uploadMedia: "Datei hochgeladen: {{path}}"
+
+# Lokal arbeiten ohne Login (benötigt den laufenden decap-server, siehe start-cms.command)
+local_backend: true
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+
+  # ───────────────────────── Startseite ─────────────────────────
+  - name: startseite
+    label: Startseite
+    editor: {preview: false}
+    files:
+
+      - name: news
+        label: News / Aktuelles
+        file: content/news.json
+        fields:
+          - label: News-Beiträge
+            label_singular: Beitrag
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            hint: "Reihenfolge per Drag & Drop. Der erste hervorgehobene Beitrag erscheint gross in Dunkelblau."
+            fields:
+              - {label: Stichwort, name: tag, widget: string, hint: "Kleine Überschrift, z. B. «Anmeldung 26/27»"}
+              - {label: Titel, name: title, widget: string}
+              - {label: Text, name: text, widget: text}
+              - {label: Link-Text, name: link_label, widget: string, required: false, hint: "z. B. «Jetzt anmelden»"}
+              - {label: Link-Ziel, name: link_url, widget: string, required: false, hint: "Webadresse (https://…) oder Abschnitt der Seite, z. B. #kontakt"}
+              - {label: Hervorheben, name: highlight, widget: boolean, default: false, required: false}
+
+      - name: stimmen
+        label: Elternstimmen
+        file: content/stimmen.json
+        fields:
+          - label: Stimmen
+            label_singular: Stimme
+            name: items
+            widget: list
+            summary: "{{fields.text | truncate(60)}}"
+            fields:
+              - {label: Zitat, name: text, widget: text}
+              - {label: Von, name: who, widget: string, default: "Elternstimme", hint: "z. B. «Elternstimme · 10. Schuljahr»"}
+
+      - name: faq
+        label: Häufige Fragen (FAQ)
+        file: content/faq.json
+        fields:
+          - label: Fragen
+            label_singular: Frage
+            name: items
+            widget: list
+            summary: "{{fields.question}}"
+            fields:
+              - {label: Frage, name: question, widget: string}
+              - {label: Antwort, name: answer, widget: text}
+
+      - name: links
+        label: Weiteres (Links & Dokumente)
+        file: content/links.json
+        fields:
+          - label: Links
+            label_singular: Link
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - label: Symbol
+                name: icon
+                widget: select
+                options:
+                  - {label: "Broschüre / Dokument", value: brochure}
+                  - {label: "Prüfung / Checkliste", value: exam}
+                  - {label: "Kosten", value: costs}
+                  - {label: "Kalender", value: calendar}
+                  - {label: "Instagram", value: instagram}
+                  - {label: "Facebook", value: facebook}
+                  - {label: "YouTube", value: youtube}
+                  - {label: "Podcast / Spotify", value: podcast}
+                  - {label: "Tastatur / Lernprogramm", value: keyboard}
+              - {label: Titel, name: title, widget: string}
+              - {label: Kurzbeschreibung, name: text, widget: string}
+              - {label: Link, name: url, widget: string, required: false, hint: "Webadresse (https://…). «#broschuere» öffnet den Broschüren-Viewer."}
+              - {label: "…oder Datei (PDF)", name: file, widget: file, required: false, media_folder: /dokumente, public_folder: /dokumente, hint: "Wenn hier eine Datei hochgeladen ist, wird sie statt des Links verwendet."}
+
+      - name: allgemein
+        label: Allgemein (Titelbild-Text, Leitsatz, Kontakt)
+        file: content/allgemein.json
+        fields:
+          - label: Titelbereich (Hero)
+            name: hero
+            widget: object
+            fields:
+              - {label: Überzeile, name: eyebrow, widget: string}
+              - {label: Titel, name: title, widget: string, hint: "Ein Wort zwischen *Sternchen* wird hervorgehoben."}
+              - {label: Text, name: text, widget: text}
+          - label: Kennzahlen
+            label_singular: Kennzahl
+            name: stats
+            widget: list
+            summary: "{{fields.number}} {{fields.label}}"
+            fields:
+              - {label: Zahl / Wert, name: number, widget: string, hint: "Reine Zahlen zählen beim Laden hoch."}
+              - {label: Beschriftung, name: label, widget: string}
+          - {label: Leitsatz, name: leitsatz, widget: text, hint: "Ein Wort zwischen *Sternchen* wird hervorgehoben."}
+          - label: Kontaktdaten
+            name: kontakt
+            widget: object
+            fields:
+              - {label: E-Mail, name: email, widget: string}
+              - {label: Telefon, name: phone, widget: string, hint: "z. B. +41 43 843 70 43"}
+              - {label: Strasse, name: street, widget: string}
+              - {label: PLZ & Ort, name: city, widget: string}
+
+  # ───────────────────────── Agenda ─────────────────────────
+  - name: agenda
+    label: Agenda
+    editor: {preview: false}
+    files:
+      - name: agenda
+        label: Termine, Ferien & Events
+        file: content/agenda.json
+        fields:
+          - label: Termine
+            label_singular: Termin
+            name: items
+            widget: list
+            summary: "{{fields.start}} – {{fields.title}}"
+            hint: "Vergangene Termine werden auf der Website automatisch ausgeblendet. Die Reihenfolge spielt keine Rolle."
+            fields:
+              - {label: Titel, name: title, widget: string}
+              - {label: Von, name: start, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false}
+              - {label: Bis, name: end, widget: datetime, format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false, required: false, hint: "Leer lassen bei eintägigen Terminen."}
+              - label: Art
+                name: category
+                widget: select
+                default: event
+                options:
+                  - {label: Event, value: event}
+                  - {label: Ferien, value: ferien}
+                  - {label: Schulfrei, value: frei}
+
+  # ───────────────────────── Angebot ─────────────────────────
+  - name: angebote
+    label: Angebote
+    editor: {preview: false}
+    files:
+      - name: angebote
+        label: Angebote
+        file: content/angebote.json
+        fields:
+          - label: Angebote
+            label_singular: Angebot
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - {label: Titel, name: title, widget: string}
+              - {label: Kurzbeschreibung (Kachel), name: teaser, widget: string}
+              - {label: Kachelbild, name: image, widget: image}
+              - {label: Detailtext (Fenster «Mehr erfahren»), name: detail, widget: markdown, buttons: [bold, italic, link, heading-four, bulleted-list, numbered-list], editor_components: [image]}
+              - {label: Interne ID, name: id, widget: hidden, required: false}
+
+  # ───────────────────────── Team ─────────────────────────
+  - name: team
+    label: Team
+    editor: {preview: false}
+    files:
+      - name: team
+        label: Lehrpersonen & Mitarbeitende
+        file: content/team.json
+        fields:
+          - label: Personen
+            label_singular: Person
+            name: members
+            widget: list
+            summary: "{{fields.first}} {{fields.last}}"
+            fields:
+              - {label: Vorname, name: first, widget: string}
+              - {label: Nachname, name: last, widget: string}
+              - {label: Funktion / Fächer, name: role, widget: string}
+              - {label: Portrait-Foto, name: photo, widget: image, hint: "Hochformat, ideal 500 × 700 px"}
+              - {label: KI-Bild (Rückseite), name: ki, widget: image, required: false, hint: "Optional. Ohne KI-Bild zeigt die Rückseite das Portrait."}
+
+  # ───────────────────────── Galerie ─────────────────────────
+  - name: galerie
+    label: Galerie
+    editor: {preview: false}
+    files:
+      - name: galerie
+        label: Fotoalben
+        file: content/galerie.json
+        fields:
+          - label: Alben
+            label_singular: Album
+            name: albums
+            widget: list
+            summary: "{{fields.title}}"
+            hint: "Neue Alben oben einfügen – die Reihenfolge entspricht der Anzeige auf der Website."
+            fields:
+              - {label: Titel, name: title, widget: string}
+              - {label: Titelbild, name: cover, widget: image, required: false, hint: "Querformat, ideal 700 × 500 px. Leer = erstes Foto."}
+              - label: Fotos
+                label_singular: Foto
+                name: photos
+                widget: list
+                collapsed: true
+                field: {label: Foto, name: photo, widget: image}

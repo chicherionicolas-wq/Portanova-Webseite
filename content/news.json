@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "tag": "Anmeldung 26/27",
+      "title": "Schulplätze für das Schuljahr 26 / 27",
+      "text": "Die verfügbaren Plätze für das aktuelle Schuljahr in der 6. Klasse und der 1. Sekundarstufe sind zunehmend vergeben – es gibt noch einzelne freie Plätze. Für die 2. Sekundarstufe besteht bereits eine Warteliste. In der 3. Sekundarstufe haben wir noch freie Plätze, da viele Schülerinnen und Schüler der 2. Sekundarstufe einen gymnasialen Anschluss haben. Wir empfehlen eine baldige Entscheidung.",
+      "link_label": "Jetzt anmelden",
+      "link_url": "#kontakt",
+      "highlight": true
+    },
+    {
+      "tag": "Podcast · YouTube",
+      "title": "Portanova im Gespräch",
+      "text": "Unser Podcast «Portanova im Gespräch» ist jetzt auf YouTube verfügbar – mit Einblicken in den Schulalltag und Themen rund um die Schule.",
+      "link_label": "Auf YouTube ansehen",
+      "link_url": "https://www.youtube.com/@PortanovaPrivatschule",
+      "highlight": false
+    },
+    {
+      "tag": "Podcast · Spotify",
+      "title": "Lieber unterwegs hören?",
+      "text": "«Portanova im Gespräch» finden Sie ab sofort auch auf Spotify. Hören Sie jetzt die erste Folge unseres Podcasts.",
+      "link_label": "Auf Spotify hören",
+      "link_url": "https://open.spotify.com/episode/1ATh9Jzsbz4MQPxwi1Ly3g",
+      "highlight": false
+    }
+  ]
+}

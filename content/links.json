@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "icon": "brochure",
+      "title": "Schulbroschüre",
+      "text": "Blättern Sie online durch unsere Imagebroschüre.",
+      "url": "#broschuere"
+    },
+    {
+      "icon": "exam",
+      "title": "Aufnahmeprüfung",
+      "text": "Alle Infos zur Aufnahmeprüfung.",
+      "url": "https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung.html"
+    },
+    {
+      "icon": "costs",
+      "title": "Kostenübersicht",
+      "text": "Transparente Schulgeld-Übersicht (PDF).",
+      "url": "dokumente/Kostenuebersicht-SJ26-27.pdf"
+    },
+    {
+      "icon": "calendar",
+      "title": "Ferienplan",
+      "text": "Der aktuelle Ferienplan.",
+      "url": "https://www.privatschule.ch/ferienplan"
+    },
+    {
+      "icon": "brochure",
+      "title": "Jahrbuch",
+      "text": "Das Portanova-Jahrbuch (PDF).",
+      "url": "dokumente/Jahrbuch-Portanova.pdf"
+    },
+    {
+      "icon": "brochure",
+      "title": "Texte unserer 6. Klässler:innen",
+      "text": "Eindrücke aus der ersten Schulwoche (PDF).",
+      "url": "dokumente/Texte-6-Klaessler.pdf"
+    },
+    {
+      "icon": "brochure",
+      "title": "Artikel «Treffpunkt»",
+      "text": "Die Portanova in der Zeitschrift Treffpunkt (PDF).",
+      "url": "dokumente/Artikel-Treffpunkt.pdf"
+    },
+    {
+      "icon": "instagram",
+      "title": "Instagram",
+      "text": "Einblicke aus dem Schulalltag.",
+      "url": "https://www.instagram.com/portanova_privatschule/"
+    },
+    {
+      "icon": "facebook",
+      "title": "Facebook",
+      "text": "Folgen Sie uns auf Facebook.",
+      "url": "https://www.facebook.com/portanovaprivatschule/"
+    },
+    {
+      "icon": "youtube",
+      "title": "YouTube",
+      "text": "Podcast «Portanova im Gespräch».",
+      "url": "https://www.youtube.com/@PortanovaPrivatschule"
+    },
+    {
+      "icon": "podcast",
+      "title": "Spotify",
+      "text": "Den Podcast unterwegs hören.",
+      "url": "https://open.spotify.com/show/033wuZLVazP9TFdsxmvE7T"
+    },
+    {
+      "icon": "keyboard",
+      "title": "Tipp 10",
+      "text": "Online Tastaturschreiben üben.",
+      "url": "https://portanova.tipp10.com/de/"
+    }
+  ]
+}

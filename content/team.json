@@ -1,0 +1,172 @@
+{
+  "members": [
+    {
+      "first": "Thomas",
+      "last": "Baumann",
+      "role": "Schul- & Geschäftsleitung · Mathematik, Informatik, Sport, ECDL",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Portrait-Foto-Thomas-Baumann.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Thomas.png"
+    },
+    {
+      "first": "Hajo",
+      "last": "Herzog",
+      "role": "Schul- & Geschäftsleitung · Mathematik, Medien/Informatik, Wirtschaft & Recht, Projektunterricht Wirtschaft, Sport, ECDL",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Hajo-Portrait-Foto-3.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Hajo-5.png"
+    },
+    {
+      "first": "Céline",
+      "last": "Decurtins",
+      "role": "Leitung Gymi- & Probezeitvorbereitung · Mathematik, Geometrie, Naturwissenschaften, Geografie",
+      "photo": "images/crop_500x700_12x0_resize_525x700_Portrait-Foto-Celine-Decurtins2.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Celine.png"
+    },
+    {
+      "first": "Danique",
+      "last": "Wolffram",
+      "role": "Englisch, English Cambridge, Informatik, Niederländisch, Theater",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Portrait-Foto-Danique-Wolffram2.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Danique.png"
+    },
+    {
+      "first": "Tim",
+      "last": "Loughrin",
+      "role": "Mathematik, Englisch, Geografie, Theater",
+      "photo": "images/crop_500x700_12x0_resize_525x700_Tim.jpg",
+      "ki": "images/crop_500x700_13x0_resize_525x700_KI-Bild-Tim.png"
+    },
+    {
+      "first": "Katrin",
+      "last": "Herzog",
+      "role": "Französisch, Deutsch, Gymivorbereitung & Progymi Deutsch",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Katrin-Portrait-Foto.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Katrin-6.png"
+    },
+    {
+      "first": "Simone",
+      "last": "Barth",
+      "role": "Französisch, Englisch, Sport, Natur/Mensch/Gesellschaft, Geografie, Geschichte",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Simone-Portrait-Foto-2.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Simone.jpg"
+    },
+    {
+      "first": "Eva",
+      "last": "Fäh",
+      "role": "Deutsch, Deutsch als Fremdsprache",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Eva-Portrait-Foto-2.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Eva.jpg"
+    },
+    {
+      "first": "Michele",
+      "last": "Danieli",
+      "role": "Deutsch, Gymi- & Probezeitvorbereitung Deutsch, Kalligraphie, Italienisch",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Michele-Portrait-Foto.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Michele1.jpg"
+    },
+    {
+      "first": "Daiana",
+      "last": "Frei (ehem. Gandossi)",
+      "role": "Assistentin der Schulleitung & Finanzbuchhaltung",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Portraitfoto-Daiana.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Daiana.png"
+    },
+    {
+      "first": "Irina",
+      "last": "Bowald",
+      "role": "Deutsch, Französisch, Sport, Projektunterricht, Mental Coaching",
+      "photo": "images/crop_500x700_12x0_resize_525x700_Irina2.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Irina.jpg"
+    },
+    {
+      "first": "Dorothee",
+      "last": "Perner",
+      "role": "Naturwissenschaft, Mathematik, Geografie",
+      "photo": "images/crop_500x700_12x0_resize_523x700_Portrait-Foto-Doro-1-5.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Doro.png"
+    },
+    {
+      "first": "Bettina",
+      "last": "Bühler",
+      "role": "Assistentin der Schulleitung",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Bettina-Portrait-Foto.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Bettina.jpg"
+    },
+    {
+      "first": "Carlos",
+      "last": "Pestana",
+      "role": "Französisch, Geschichte, Medien & Informatik, Staatskunde, Berufswahlkunde, Programmieren & Robotik, ECDL",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Carlos-Portrait-Foto.jpg",
+      "ki": "images/crop_500x700_13x0_resize_525x700_KI-Bild-Carlos.png"
+    },
+    {
+      "first": "Anke",
+      "last": "Pera",
+      "role": "Coaching",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Anke-Portrait-Foto.jpg",
+      "ki": "images/crop_500x700_13x0_resize_525x700_KI-Bild-Anke.png"
+    },
+    {
+      "first": "Monika",
+      "last": "Keller",
+      "role": "Sport, Wirtschaft & Recht",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Portrait-Foto-Monika-Keller.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Monika.jpg"
+    },
+    {
+      "first": "Adeyemi",
+      "last": "Larry",
+      "role": "Bildnerisches und technisches Gestalten, Art, Atelier",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Yemi-Portrait-Foto.jpg",
+      "ki": "images/crop_500x700_13x0_resize_525x700_KI-Bild-Yemi.png"
+    },
+    {
+      "first": "Nicolas",
+      "last": "Chicherio",
+      "role": "Medien & Informatik",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Nicola.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Nicolas.png"
+    },
+    {
+      "first": "Anja",
+      "last": "Insua",
+      "role": "Spanisch, Mittagstisch",
+      "photo": "images/crop_500x700_12x0_resize_525x700_Portrait-Foto-Anja-Insua.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Anja.jpg"
+    },
+    {
+      "first": "Neetha",
+      "last": "Mahabeer",
+      "role": "Englisch",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Neetha.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Neetha.png"
+    },
+    {
+      "first": "Jessica",
+      "last": "Hanke",
+      "role": "Mittagstisch",
+      "photo": "images/crop_500x700_35x0_resize_569x700_Portrait-Foto-Jessica-Hanke.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Jessica.png"
+    },
+    {
+      "first": "Aída",
+      "last": "Barja",
+      "role": "Assistentin der Schulleitung",
+      "photo": "images/crop_500x700_13x0_resize_525x700_Aida-Portrait-Foto.jpg",
+      "ki": "images/crop_500x700_0x25_resize_500x750_KI-Bild-Aida.jpg"
+    },
+    {
+      "first": "Manuela",
+      "last": "Otter",
+      "role": "Klassenlehrperson, Mathematik, Sport",
+      "photo": "images/Manuela-Otter-Portrait.jpg",
+      "ki": "images/crop_500x700_0x26_resize_500x751_Manuela-KI-Bild.png"
+    },
+    {
+      "first": "Marc",
+      "last": "Kämpfen",
+      "role": "Werken, bildnerisches Gestalten, Design, Art",
+      "photo": "images/crop_500x700_161x0_resize_823x700_Unknown2.png",
+      "ki": "images/crop_500x700_161x0_resize_823x700_Unknown3.png"
+    }
+  ]
+}

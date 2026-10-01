@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portanova Privatschule · Feldmeilen ZH</title>
+<meta name="description" content="Portanova Privatschule in Feldmeilen am Zürichsee – 6. Klasse, Sekundarschule Stufe A, 10. Schuljahr, Gymivorbereitung & Wahlfächer. Persönlich, modern, mit Herz." />
+<link rel="icon" href="images/portanova_logo-small.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16212e;
+    --navy-2:#1e2b37;
+    --ink:#1a252f;
+    --blue:#2f7fce;
+    --blue-bright:#3788d8;
+    --blue-light:#6fb1ec;
+    --bg:#fcfcfa;
+    --soft:#f4f8fc;
+    --soft-2:#eaf1f8;
+    --line:rgba(22,33,46,.10);
+    --muted:#5d6b7b;
+    --gold:#d9a441;
+    /* mehrschichtige Schatten: nahe, scharfe Kante + weiche Tiefe */
+    --shadow:0 1px 2px -1px rgba(22,33,46,.14),0 18px 50px -22px rgba(22,33,46,.34);
+    --shadow-sm:0 1px 2px -1px rgba(22,33,46,.10),0 10px 28px -18px rgba(22,33,46,.38);
+    --r-sm:14px;
+    --r:18px;
+    --r-lg:22px;
+    --maxw:1180px;
+    /* Easing (Emil Kowalski): kräftiger als die CSS-Defaults */
+    --ease-out:cubic-bezier(.23,1,.32,1);
+    --ease-in-out:cubic-bezier(.77,0,.175,1);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  /* feine Film-Körnung über der ganzen Seite – kaum sichtbar, gibt Tiefe/Haptik */
+  body::before{content:"";position:fixed;inset:0;z-index:120;pointer-events:none;opacity:.028;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.1;letter-spacing:-.01em;margin:0}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--blue);margin-bottom:18px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--blue);border-radius:2px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.96rem;cursor:pointer;
+    border:none;padding:14px 26px;border-radius:999px;transition:transform .2s var(--ease-out),box-shadow .2s,background .2s;}
+  .btn:active{transform:scale(.97)}
+  .btn-primary{background:linear-gradient(180deg,#4f9ae1,var(--blue-bright));color:#fff;
+    box-shadow:0 12px 30px -12px rgba(55,136,216,.8),inset 0 1px 0 rgba(255,255,255,.28)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(55,136,216,.9),inset 0 1px 0 rgba(255,255,255,.3)}
+  .btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
+  .btn-light{background:#fff;color:var(--navy)}
+  .btn-light:hover{transform:translateY(-2px);box-shadow:0 18px 40px -14px rgba(0,0,0,.4)}
+
+  /* ---------- Header ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,box-shadow .3s,padding .3s;
+    padding:16px 0;background:rgba(255,255,255,0);}
+  header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:10px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-size:1.15rem;font-weight:600}
+  .brand img{height:38px;width:auto;border-radius:8px;background:#fff;padding:3px}
+  .nav-links{display:flex;gap:6px;align-items:center}
+  .nav-links a{font-size:.93rem;font-weight:600;color:var(--navy);padding:9px 13px;border-radius:10px;transition:background .2s,color .2s}
+  .nav-links a:hover{background:var(--soft-2);color:var(--blue)}
+  .nav-cta{display:flex;align-items:center;gap:10px}
+  .nav-login{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border-radius:999px;
+    font-weight:700;font-size:.88rem;color:var(--navy);background:rgba(255,255,255,.92);border:1px solid var(--line);
+    transition:transform .2s var(--ease-out),box-shadow .2s,color .2s}
+  .nav-login img{width:24px;height:24px;border-radius:6px;display:block}
+  .nav-login:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);color:var(--blue)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+  a.nav-cta-mobile{display:none}
+  @media(max-width:960px){
+    .nav-links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);background:#fff;flex-direction:column;
+      align-items:flex-start;padding:90px 22px;gap:4px;transform:translateX(100%);transition:transform .35s;box-shadow:var(--shadow)}
+    .nav-links.open{transform:translateX(0)}
+    .nav-links a{width:100%;font-size:1.05rem;padding:12px 14px}
+    .burger{display:flex;z-index:101}
+    .nav-cta .btn{display:none}
+    .nav-links a.nav-cta-mobile{display:inline-flex;justify-content:center;margin-top:16px;
+      background:var(--blue-bright);color:#fff;padding:14px 26px}
+    .nav-links a.nav-cta-mobile:hover{background:var(--blue);color:#fff}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:-2}
+  .hero-bg img,.hero-bg video{width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(105deg,rgba(13,22,33,.92) 0%,rgba(16,28,43,.78) 45%,rgba(20,40,66,.35) 100%)}
+  /* filmische Vignette für Tiefe + Lesbarkeit */
+  .hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(125% 105% at 50% 0%,transparent 52%,rgba(8,13,20,.55) 100%)}
+  .hero-vidctrl{position:absolute;bottom:24px;right:26px;z-index:3;width:44px;height:44px;border-radius:50%;
+    background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);color:#fff;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.8rem;line-height:1;
+    transition:background .2s,transform .16s var(--ease-out)}
+  .hero-vidctrl:hover{background:rgba(255,255,255,.26)}
+  .hero-vidctrl:active{transform:scale(.94)}
+  .hero-inner{padding:130px 0 90px;max-width:780px}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:500;margin-bottom:22px}
+  .hero h1 em{font-style:italic;color:var(--blue-light)}
+  .hero p{font-size:clamp(1.05rem,1.6vw,1.28rem);color:#dce6f1;max-width:600px;margin:0 0 34px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-stats{display:flex;gap:40px;margin-top:56px;flex-wrap:wrap}
+  .hero-stats .stat .num{font-family:'Fraunces',serif;font-size:2.4rem;color:#fff;line-height:1}
+  .hero-stats .stat .lbl{font-size:.85rem;color:#aebfd0;margin-top:6px}
+  .scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:#cdd9e6;font-size:.78rem;
+    letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.8}
+  .scroll-cue::after{content:"";width:1px;height:34px;background:linear-gradient(#cdd9e6,transparent);animation:cue 1.8s infinite}
+  @keyframes cue{0%{opacity:0;transform:scaleY(.3)}50%{opacity:1}100%{opacity:0;transform:scaleY(1)}}
+
+  /* ---------- Section base ---------- */
+  section{padding:96px 0}
+  .sec-head{max-width:640px;margin-bottom:50px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:16px}
+  .sec-head p{color:var(--muted);font-size:1.06rem;margin:0}
+  .soft-bg{background:var(--soft)}
+
+  /* ---------- Leitsatz / Drama-Sektion ---------- */
+  .statement{background:linear-gradient(155deg,var(--navy),var(--navy-2));color:#fff;text-align:center;
+    position:relative;overflow:hidden}
+  .statement::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+    width:60px;height:4px;border-radius:0 0 4px 4px;background:var(--gold)}
+  .statement .wrap{max-width:900px}
+  .statement-text{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(1.7rem,3.6vw,2.8rem);
+    line-height:1.32;letter-spacing:-.01em;margin:16px 0 0;text-wrap:balance}
+  .statement-text em{font-style:italic;color:var(--blue-light)}
+
+  /* ---------- News ---------- */
+  .news-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+  @media(max-width:880px){.news-grid{grid-template-columns:1fr}}
+  .news-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;
+    box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s}
+  .news-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .news-card.feature{background:linear-gradient(150deg,var(--navy),var(--navy-2));color:#fff;border:none;position:relative}
+  /* Gold-Akzent als wiederkehrendes Motiv auf dunklen Panels */
+  .news-card.feature::before,.offer-lead::before,.contact-info::before{content:"";position:absolute;top:0;left:34px;
+    width:48px;height:4px;border-radius:0 0 4px 4px;background:var(--gold)}
+  .offer-lead,.contact-info{position:relative}
+  .news-tag{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+  .news-card.feature .news-tag{color:var(--blue-light)}
+  .news-card h3{font-size:1.45rem;margin-bottom:12px}
+  .news-card p{color:var(--muted);font-size:.97rem;margin:0 0 18px}
+  .news-card.feature p{color:#c6d4e3}
+  .news-card .link{margin-top:auto;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:7px}
+  .news-card.feature .link{color:var(--blue-light)}
+  .news-card .link span{transition:transform .2s}
+  .news-card:hover .link span{transform:translateX(4px)}
+
+  /* ---------- Agenda ---------- */
+  .agenda-list{display:grid;gap:12px;max-width:860px}
+  .ag-item{display:grid;grid-template-columns:74px 1fr auto;align-items:center;gap:20px;background:#fff;
+    border:1px solid var(--line);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow-sm);
+    transition:transform .2s,box-shadow .2s,border-color .2s}
+  .ag-item:hover{transform:translateX(4px);box-shadow:var(--shadow);border-color:var(--blue)}
+  .ag-date{text-align:center;line-height:1}
+  .ag-date .d{font-family:'Fraunces',serif;font-size:1.9rem;color:var(--navy)}
+  .ag-date .m{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-top:3px}
+  .ag-date .range{font-size:.7rem;color:var(--muted);margin-top:3px;font-weight:600}
+  .ag-body .ag-title{font-weight:700;font-size:1.02rem;color:var(--ink)}
+  .ag-body .ag-when{font-size:.84rem;color:var(--muted);margin-top:3px}
+  .ag-badge{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;
+    border-radius:999px;white-space:nowrap}
+  .ag-badge.event{background:rgba(55,136,216,.12);color:var(--blue)}
+  .ag-badge.ferien{background:rgba(217,164,65,.16);color:#a9781f}
+  .ag-badge.frei{background:var(--soft-2);color:var(--muted)}
+  .agenda-foot{margin-top:26px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .agenda-empty{color:var(--muted);font-size:1rem}
+  @media(max-width:560px){
+    .ag-item{grid-template-columns:60px 1fr;gap:14px;padding:14px 16px}
+    .ag-badge{grid-column:2;justify-self:start;margin-top:4px}
+    .ag-date .d{font-size:1.6rem}
+  }
+
+  /* ---------- Testimonials ---------- */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:880px){.quotes{grid-template-columns:1fr}}
+  .quote{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 30px;position:relative;
+    box-shadow:var(--shadow-sm)}
+  .quote::before{content:"\201C";font-family:'Fraunces',serif;font-size:4.6rem;color:rgba(217,164,65,.38);
+    position:absolute;top:8px;left:20px;line-height:1}
+  .quote p{position:relative;font-size:.99rem;color:#374756;margin:0 0 18px}
+  .quote .who{font-weight:700;color:var(--blue);font-size:.88rem;display:flex;align-items:center;gap:8px}
+  .quote .who::before{content:"";width:18px;height:2px;background:var(--blue);border-radius:2px}
+
+  /* ---------- Angebot ---------- */
+  .offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:900px){.offer-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.offer-grid{grid-template-columns:1fr}}
+  .offer{border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);
+    transition:transform .25s,box-shadow .25s;cursor:pointer;outline:none}
+  .offer:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+  .offer:focus-visible{box-shadow:0 0 0 3px rgba(55,136,216,.5),var(--shadow)}
+  .offer .ph{aspect-ratio:16/10;overflow:hidden}
+  .offer .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .offer:hover .ph img{transform:scale(1.06)}
+  .offer .body{padding:24px}
+  .offer h3{font-size:1.3rem;margin-bottom:8px}
+  .offer p{color:var(--muted);font-size:.94rem;margin:0}
+  .offer-more{margin-top:14px;display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:.9rem;color:var(--blue)}
+  .offer-more span{transition:transform .2s var(--ease-out)}
+  .offer:hover .offer-more span{transform:translateX(4px)}
+  .offer-lead{background:linear-gradient(150deg,var(--navy),var(--navy-2));color:#fff;border-radius:var(--r);
+    padding:42px;display:flex;flex-direction:column;justify-content:center}
+  .offer-lead h3{color:#fff;font-size:1.7rem;margin-bottom:14px}
+  .offer-lead p{color:#c6d4e3;font-size:1rem;margin-bottom:22px}
+
+  /* ---------- Team (3D-Flip-Karten) ---------- */
+  .team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+  @media(max-width:1000px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:600px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+  .member{aspect-ratio:3/4;perspective:1300px;cursor:pointer;outline:none}
+  .member-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;
+    transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .member.flipped .member-inner{transform:rotateY(180deg)}
+  .member:focus-visible .member-inner{box-shadow:0 0 0 3px rgba(55,136,216,.5);border-radius:16px}
+  .member-face{position:absolute;inset:0;border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);
+    -webkit-backface-visibility:hidden;backface-visibility:hidden}
+  .member-front{background:var(--soft-2)}
+  .member-front img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .member:hover .member-front img{transform:scale(1.05)}
+  .member-front .info{position:absolute;left:0;right:0;bottom:0;padding:46px 16px 16px;color:#fff;
+    background:linear-gradient(transparent,rgba(13,22,33,.92))}
+  .member-front .info .nm{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:600}
+  .flip-cue{position:absolute;top:11px;right:11px;width:30px;height:30px;border-radius:50%;
+    background:rgba(13,22,33,.5);backdrop-filter:blur(6px);color:#fff;display:flex;align-items:center;
+    justify-content:center;font-size:.95rem;transition:background .2s}
+  .member:hover .flip-cue{background:var(--blue-bright)}
+  .member-back{transform:rotateY(180deg);background:var(--soft-2)}
+  .member-back img{width:100%;height:100%;object-fit:cover}
+  .member-back .info{position:absolute;left:0;right:0;bottom:0;padding:48px 16px 16px;color:#fff;
+    background:linear-gradient(transparent,rgba(13,22,33,.94))}
+  .member-back .info .nm{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:600;margin-bottom:5px}
+  .member-back .info .role{font-size:.78rem;color:#cdd9e6;line-height:1.45}
+  .team-hint{display:inline-flex;align-items:center;gap:9px;margin-top:18px;padding:9px 16px;border-radius:999px;
+    background:var(--soft-2);color:var(--navy);font-size:.86rem;font-weight:600}
+  .team-hint .ic{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--blue-bright);color:#fff;
+    align-items:center;justify-content:center;font-size:.9rem}
+  @media(hover:none){.team-hint .lbl-hover{display:none}}
+  @media(hover:hover){.team-hint .lbl-touch{display:none}}
+  .ki-tag{position:absolute;top:11px;left:11px;background:var(--gold);color:#3a2a06;font-size:.68rem;font-weight:800;
+    letter-spacing:.08em;padding:4px 10px;border-radius:999px;box-shadow:var(--shadow-sm)}
+
+  /* ---------- Gebäude ---------- */
+  .building{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  @media(max-width:880px){.building{grid-template-columns:1fr}}
+  .building-img{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);position:relative}
+  .building-img img{width:100%;height:100%;object-fit:cover}
+  .building-feats{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+  .feat{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .feat .k{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--blue);line-height:1}
+  .feat .v{font-size:.9rem;color:var(--muted);margin-top:4px}
+
+  /* ---------- Galerie ---------- */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  @media(max-width:1000px){.gallery{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .album{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;cursor:pointer;box-shadow:var(--shadow-sm)}
+  .album img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .album:hover img{transform:scale(1.08)}
+  .album::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(13,22,33,.85))}
+  .album .cap{position:absolute;left:14px;right:14px;bottom:13px;color:#fff;font-weight:700;font-size:.92rem;z-index:1;
+    transform:translateY(4px);transition:transform .3s}
+  .album:hover .cap{transform:translateY(0)}
+  .album .count{position:absolute;top:11px;right:11px;z-index:1;background:rgba(13,22,33,.7);backdrop-filter:blur(6px);
+    color:#fff;font-size:.74rem;font-weight:700;padding:4px 10px;border-radius:999px;display:flex;align-items:center;gap:5px}
+
+  /* ---------- Lightbox / Album modal ---------- */
+  .lb{position:fixed;inset:0;z-index:200;display:none;background:rgba(8,14,21,.97);backdrop-filter:blur(4px)}
+  .lb.open{display:flex;flex-direction:column}
+  .lb-head{display:flex;align-items:center;justify-content:space-between;padding:18px 26px;color:#fff;flex:none;
+    border-bottom:1px solid rgba(255,255,255,.1)}
+  .lb-head h3{color:#fff;font-size:1.3rem}
+  .lb-head .meta{font-size:.85rem;color:#9fb2c6;margin-top:2px}
+  .lb-close{background:rgba(255,255,255,.1);border:none;color:#fff;width:42px;height:42px;border-radius:50%;
+    font-size:1.4rem;cursor:pointer;transition:background .2s;flex:none}
+  .lb-close:hover{background:var(--blue-bright)}
+  .lb-grid{flex:1;overflow-y:auto;padding:22px 26px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:12px;align-content:start}
+  .lb-grid img{width:100%;height:180px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .2s,opacity .2s;background:#1a2735}
+  .lb-grid img:hover{transform:scale(1.03);opacity:.9}
+  /* fullscreen single photo viewer */
+  .pv{position:fixed;inset:0;z-index:210;display:none;align-items:center;justify-content:center;background:rgba(5,9,14,.97)}
+  .pv.open{display:flex}
+  .pv img{max-width:92vw;max-height:86vh;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .pv-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:none;color:#fff;
+    width:54px;height:54px;border-radius:50%;font-size:1.6rem;cursor:pointer;transition:background .2s}
+  .pv-btn:hover{background:var(--blue-bright)}
+  .pv-prev{left:24px}.pv-next{right:24px}
+  .pv-close{position:absolute;top:22px;right:26px;background:rgba(255,255,255,.12);border:none;color:#fff;width:46px;height:46px;
+    border-radius:50%;font-size:1.4rem;cursor:pointer}
+  .pv-close:hover{background:var(--blue-bright)}
+  .pv-count{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:#cdd9e6;font-size:.88rem;
+    background:rgba(13,22,33,.7);padding:6px 16px;border-radius:999px}
+  @media(max-width:600px){.pv-btn{width:44px;height:44px}.pv-prev{left:10px}.pv-next{right:10px}}
+
+  /* ---------- Broschüren-Viewer ---------- */
+  .bv{position:fixed;inset:0;z-index:220;display:none;flex-direction:column;background:rgba(8,13,20,.97);backdrop-filter:blur(6px)}
+  .bv.open{display:flex}
+  .bv-head{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;color:#fff;flex:none;
+    border-bottom:1px solid rgba(255,255,255,.1)}
+  .bv-title{font-family:'Fraunces',serif;font-size:1.3rem;display:flex;align-items:baseline;gap:12px}
+  .bv-title .bv-sub{font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;color:#9fb2c6;font-weight:600}
+  .bv-close{background:rgba(255,255,255,.1);border:none;color:#fff;width:42px;height:42px;border-radius:50%;
+    font-size:1.4rem;cursor:pointer;flex:none;transition:background .2s,transform .16s var(--ease-out)}
+  .bv-close:hover{background:var(--blue-bright)} .bv-close:active{transform:scale(.94)}
+  .bv-stage{flex:1;display:flex;align-items:center;justify-content:center;gap:14px;padding:18px 16px 8px;min-height:0}
+  .bv-img{max-width:min(94vw,1080px);max-height:78vh;border-radius:6px;box-shadow:0 30px 80px rgba(0,0,0,.55);background:#fff}
+  .bv-nav{flex:none;background:rgba(255,255,255,.12);border:none;color:#fff;width:52px;height:52px;border-radius:50%;
+    font-size:1.6rem;cursor:pointer;transition:background .2s,transform .16s var(--ease-out)}
+  .bv-nav:hover{background:var(--blue-bright)} .bv-nav:active{transform:scale(.92)}
+  .bv-foot{flex:none;display:flex;justify-content:center;gap:14px;padding:0 0 22px}
+  .bv-count{color:#cdd9e6;font-size:.88rem;background:rgba(13,22,33,.7);padding:6px 16px;border-radius:999px}
+  .bv-dl{color:#cdd9e6;font-size:.88rem;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+  .bv-dl:hover{color:#fff}
+  @media(max-width:600px){.bv-nav{width:42px;height:42px}.bv-img{max-height:68vh}.bv-head{padding:14px 16px}.bv-title{font-size:1.1rem}}
+
+  /* ---------- Angebot-Detail-Modal ---------- */
+  .om{position:fixed;inset:0;z-index:215;display:none;align-items:center;justify-content:center;padding:20px;
+    background:rgba(8,13,20,.62);backdrop-filter:blur(4px)}
+  .om.open{display:flex}
+  .om-panel{background:#fff;border-radius:var(--r-lg);max-width:720px;width:100%;max-height:88vh;display:flex;
+    flex-direction:column;box-shadow:0 40px 100px rgba(0,0,0,.45);overflow:hidden;
+    transform:scale(.96);opacity:0;transition:transform .35s var(--ease-out),opacity .35s var(--ease-out)}
+  .om.open .om-panel{transform:scale(1);opacity:1}
+  .om-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:28px 30px 16px;flex:none}
+  .om-head .eyebrow{margin-bottom:8px}
+  .om-head h3{font-size:1.7rem}
+  .om-close{flex:none;background:var(--soft-2);border:none;color:var(--navy);width:40px;height:40px;border-radius:50%;
+    font-size:1.3rem;cursor:pointer;transition:background .2s,color .2s,transform .16s var(--ease-out)}
+  .om-close:hover{background:var(--blue-bright);color:#fff} .om-close:active{transform:scale(.94)}
+  .om-body{overflow-y:auto;padding:4px 30px 30px}
+  .om-img{width:100%;border-radius:12px;margin:4px 0 20px;display:block;box-shadow:var(--shadow-sm);background:var(--soft-2)}
+  .om-body p{color:#374756;font-size:.99rem;margin:0 0 14px}
+  .om-body a{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+  .om-body a:hover{color:var(--blue-bright)}
+  .om-links{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 4px}
+  .om-links a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:.9rem;
+    border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;transition:border-color .2s,color .2s}
+  .om-links a:hover{border-color:var(--blue);color:var(--blue)}
+  .om-body h4{font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--blue);margin:22px 0 10px;display:flex;align-items:center;gap:9px}
+  .om-body h4::before{content:"";width:18px;height:2px;background:var(--gold);border-radius:2px}
+  .om-body ul{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:8px}
+  .om-body li{position:relative;padding-left:22px;color:#374756;font-size:.97rem;line-height:1.5}
+  .om-body li::before{content:"";position:absolute;left:4px;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--blue-light)}
+  .om-foot{flex:none;padding:18px 30px 26px;border-top:1px solid var(--line)}
+  @media(max-width:600px){.om-head{padding:22px 20px 14px}.om-head h3{font-size:1.4rem}.om-body{padding:4px 20px 24px}.om-foot{padding:16px 20px 22px}}
+
+  /* ---------- Weiteres ---------- */
+  .links-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:900px){.links-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.links-grid{grid-template-columns:1fr}}
+  .link-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;
+    gap:8px;transition:transform .2s,box-shadow .2s,border-color .2s}
+  .link-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);border-color:var(--blue)}
+  .link-card .ic{width:44px;height:44px;border-radius:12px;background:var(--soft-2);display:flex;align-items:center;
+    justify-content:center;color:var(--blue);margin-bottom:6px;transition:background .2s,color .2s}
+  .link-card .ic svg{width:22px;height:22px}
+  .link-card:hover .ic{background:var(--blue-bright);color:#fff}
+  .link-card .t{font-weight:700;font-size:1.02rem}
+  .link-card .d{font-size:.85rem;color:var(--muted)}
+
+  /* ---------- Kontakt ---------- */
+  .contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px}
+  @media(max-width:880px){.contact{grid-template-columns:1fr}}
+  .contact-info{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;border-radius:var(--r-lg);padding:42px}
+  .contact-info h3{color:#fff;font-size:1.6rem;margin-bottom:8px}
+  .contact-info .lead{color:#c6d4e3;margin-bottom:28px}
+  .ci-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px}
+  .ci-item .ic{width:42px;height:42px;flex:none;border-radius:12px;background:rgba(255,255,255,.08);
+    display:flex;align-items:center;justify-content:center;color:var(--blue-light)}
+  .ci-item .ic svg{width:20px;height:20px}
+  .ci-item .lbl{font-size:.78rem;color:#9fb2c6;text-transform:uppercase;letter-spacing:.08em}
+  .ci-item .val{font-weight:600}
+  .ci-item a.val:hover{color:var(--blue-light)}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:38px;box-shadow:var(--shadow-sm)}
+  .field{margin-bottom:18px}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:560px){.grid-2{grid-template-columns:1fr}}
+  .field label{display:block;font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:7px}
+  .field input,.field select,.field textarea{width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--line);
+    background:var(--soft);font-size:.98rem;font-family:inherit;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);
+    box-shadow:0 0 0 3px rgba(55,136,216,.16);background:#fff}
+  .field textarea{resize:vertical;min-height:110px}
+  .form-note{font-size:.82rem;color:var(--muted);margin:4px 0 18px}
+  .form-success{display:none;text-align:center;padding:20px;background:#eef9f1;border:1px solid #bfe6c9;
+    border-radius:14px;color:#1d6b39;font-weight:600;margin-top:10px}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy);color:#c6d4e3;padding:66px 0 30px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+  @media(max-width:780px){.foot-top{grid-template-columns:1fr;gap:30px}}
+  .foot-brand img{height:42px;background:#fff;border-radius:10px;padding:4px;margin-bottom:16px}
+  .foot-brand p{font-size:.92rem;max-width:320px;color:#9fb2c6}
+  .foot-col h4{color:#fff;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;margin:0 0 16px;font-family:'Plus Jakarta Sans';font-weight:700}
+  .foot-col a{display:block;font-size:.93rem;padding:5px 0;color:#aebfd0}
+  .foot-col a:hover{color:#fff}
+  .foot-social{display:flex;gap:12px;margin-top:14px}
+  .foot-social a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;
+    justify-content:center;transition:background .2s}
+  .foot-social a:hover{background:var(--blue-bright)}
+  .foot-social img{width:18px;height:18px;filter:brightness(0) invert(1)}
+  .foot-social svg{width:18px;height:18px;color:#fff}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    padding-top:24px;font-size:.85rem;color:#8497ab}
+  .foot-bottom a{color:#8497ab}.foot-bottom a:hover{color:#fff}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:800px;margin:0 auto;display:grid;gap:12px}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-sm);
+    transition:box-shadow .25s,border-color .25s}
+  .faq-item[open]{box-shadow:var(--shadow);border-color:rgba(55,136,216,.4)}
+  .faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:20px 22px;font-weight:700;font-size:1.04rem;color:var(--navy)}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary .chev{flex:none;color:var(--blue);transition:transform .25s var(--ease-out)}
+  .faq-item summary .chev svg{width:20px;height:20px}
+  .faq-item[open] summary .chev{transform:rotate(180deg)}
+  .faq-a{padding:0 22px 20px;color:var(--muted);font-size:.97rem;line-height:1.6}
+  .faq-item[open] .faq-a{animation:faqIn .28s var(--ease-out)}
+  @keyframes faqIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+  /* ---------- Sticky Mobile-Kontaktleiste ---------- */
+  .mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;gap:10px;padding:10px 14px;
+    background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line);
+    box-shadow:0 -8px 24px -18px rgba(22,33,46,.5)}
+  .mobile-bar .btn{flex:1;justify-content:center;padding:13px 18px}
+  .mobile-bar svg{width:18px;height:18px}
+  @media(max-width:720px){ .mobile-bar{display:flex} body{padding-bottom:74px} }
+
+  /* ---------- Agenda: nächster Termin (Highlight) ---------- */
+  .agenda-next{max-width:860px;margin-bottom:20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+    background:linear-gradient(150deg,var(--navy),var(--navy-2));color:#fff;border-radius:16px;padding:22px 26px;
+    box-shadow:var(--shadow);position:relative}
+  .agenda-next::before{content:"";position:absolute;top:0;left:34px;width:48px;height:4px;border-radius:0 0 4px 4px;background:var(--gold)}
+  .agenda-next .nx-main{flex:1;min-width:200px}
+  .agenda-next .lbl{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-light)}
+  .agenda-next .nx-title{font-family:'Fraunces',serif;font-size:1.35rem;margin-top:5px;line-height:1.15}
+  .agenda-next .nx-date{font-size:.92rem;color:#c6d4e3;margin-top:6px}
+
+  /* ---------- reveal (mit Stagger) ---------- */
+  .reveal{opacity:0;transform:translateY(26px);
+    transition:opacity .7s var(--ease-out),transform .7s var(--ease-out);transition-delay:var(--reveal-delay,0ms)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Clip-Path-Reveal (grosse Bilder) ---------- */
+  .clip-reveal{clip-path:inset(0 0 100% 0);transition:clip-path 1s var(--ease-in-out)}
+  .clip-reveal.in{clip-path:inset(0 0 0 0)}
+
+  /* ---------- Scroll-Fortschrittsbalken ---------- */
+  .scroll-prog{position:fixed;top:0;left:0;height:3px;width:100%;z-index:150;transform:scaleX(0);transform-origin:0 50%;
+    background:linear-gradient(90deg,var(--blue-bright),var(--blue-light));will-change:transform}
+
+  /* ---------- Bild-Fade-in beim Lazy-Loading ---------- */
+  img[loading="lazy"]{opacity:0;transition:opacity .6s var(--ease-out)}
+  img[loading="lazy"].img-in{opacity:1}
+
+  /* ---------- Globale Fokus-Ringe (Tastatur) ---------- */
+  a:focus-visible,button:focus-visible,.btn:focus-visible,select:focus-visible{
+    outline:2px solid var(--blue-bright);outline-offset:3px;border-radius:8px}
+
+  /* ---------- Reduzierte Bewegung respektieren ---------- */
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .reveal{transform:none;transition:opacity .3s ease;transition-delay:0ms !important}
+    img[loading="lazy"]{transition:opacity .3s ease}
+    .member-inner{transition:transform .2s ease}
+    .scroll-cue::after{animation:none}
+    .member:hover .member-front img,.album:hover img,.offer:hover .ph img{transform:none}
+    .faq-item[open] .faq-a{animation:none}
+    .clip-reveal{clip-path:none;transition:opacity .3s ease;opacity:0}
+    .clip-reveal.in{opacity:1}
+    .om-panel{transition:opacity .2s ease;transform:none}
+    .om.open .om-panel{transform:none}
+    *{scroll-behavior:auto !important}
+  }
+</style>
+</head>
+<body>
+
+<!-- SCROLL-FORTSCHRITT -->
+<div class="scroll-prog" id="scrollProg"></div>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand"><img src="images/portanova_logo-small.png" alt="Portanova Logo" /></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#news">News</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#angebot">Angebot</a>
+      <a href="#team">Team</a>
+      <a href="#gebaeude">Gebäude</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#weiteres">Weiteres</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#kontakt" class="btn btn-primary nav-cta-mobile">Kontakt aufnehmen</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="https://portal-1.escola.ch/escola/login/99" target="_blank" rel="noopener" class="nav-login" aria-label="Login – Portanova Privatschule (Escola)" title="Login Portanova">
+        <img src="images/escola-icon.png" alt="Escola">
+        <span>Login</span>
+      </a>
+      <a href="#kontakt" class="btn btn-primary">Kontakt aufnehmen</a>
+      <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline preload="auto" poster="images/school-image.jpeg">
+      <source src="Schulhaus.MOV" type="video/mp4" />
+      <img src="images/school-image.jpeg" alt="Portanova Privatschule" />
+    </video>
+  </div>
+  <div class="wrap">
+    <div class="hero-inner reveal">
+      <span class="eyebrow" style="color:var(--blue-light)">Privatschule am Zürichsee</span>
+      <h1>Eine Schule, die <em>Persönlichkeit</em> in den Mittelpunkt stellt.</h1>
+      <p>6. Klasse, Sekundarschule Stufe A, 10. Schuljahr und Gymivorbereitung – in der ehemaligen Kaffee-Hag-Fabrik in Feldmeilen, direkt am See und am Bahnhof.</p>
+      <div class="hero-actions">
+        <a href="#angebot" class="btn btn-light">Unser Angebot entdecken</a>
+        <a href="#kontakt" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">Besuchstermin vereinbaren</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num">8</div><div class="lbl">helle Schulzimmer</div></div>
+        <div class="stat"><div class="num">25</div><div class="lbl">Lehr&shy;personen</div></div>
+        <div class="stat"><div class="num">Sek A</div><div class="lbl">+ Gymivorbereitung</div></div>
+      </div>
+    </div>
+  </div>
+  <button class="hero-vidctrl" id="heroVidCtrl" type="button" aria-label="Video pausieren">❚❚</button>
+  <div class="scroll-cue">Entdecken</div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Aktuelles</span>
+      <h2>News von der Portanova</h2>
+      <p>Schulplätze, Podcast und Einblicke – das gibt es bei uns gerade Neues.</p>
+    </div>
+    <div class="news-grid">
+      <article class="news-card feature reveal">
+        <div class="news-tag">Anmeldung 26/27</div>
+        <h3>Schulplätze für das Schuljahr 26 / 27</h3>
+        <p>Die Plätze für die 6. Klasse und die 1. Sekundarstufe sind zunehmend vergeben – für die 6. Klasse gibt es noch einen letzten Platz. In der 3. Sekundarstufe sind einige Plätze frei. Wir empfehlen eine baldige Entscheidung.</p>
+        <a href="#kontakt" class="link">Jetzt anmelden <span>→</span></a>
+      </article>
+      <article class="news-card reveal">
+        <div class="news-tag">Podcast · YouTube</div>
+        <h3>Portanova im Gespräch</h3>
+        <p>Unser Podcast «Portanova im Gespräch» ist jetzt auf YouTube verfügbar – mit Einblicken in den Schulalltag und Themen rund um die Schule.</p>
+        <a href="https://www.youtube.com/@PortanovaPrivatschule" target="_blank" rel="noopener" class="link">Auf YouTube ansehen <span>→</span></a>
+      </article>
+      <article class="news-card reveal">
+        <div class="news-tag">Podcast · Spotify</div>
+        <h3>Lieber unterwegs hören?</h3>
+        <p>«Portanova im Gespräch» finden Sie ab sofort auch auf Spotify. Hören Sie jetzt die erste Folge unseres Podcasts.</p>
+        <a href="https://open.spotify.com/show/033wuZLVazP9TFdsxmvE7T" target="_blank" rel="noopener" class="link">Auf Spotify hören <span>→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section class="soft-bg" id="agenda">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Agenda</span>
+      <h2>Termine, Ferien &amp; Events</h2>
+      <p>Mit unserer laufend aktualisierten Agenda behalten Sie den Überblick über die Schulaktivitäten, Schulferien und Events der Portanova.</p>
+    </div>
+    <div class="agenda-next reveal" id="agendaNext" hidden></div>
+    <div class="agenda-list reveal" id="agendaList"></div>
+    <div class="agenda-foot reveal">
+      <button type="button" class="btn btn-ghost" id="agendaToggle">Gesamte Agenda ansehen →</button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="soft-bg" id="stimmen">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" style="justify-content:center">Eltern&shy;stimmen</span>
+      <h2>Positive Rückmeldungen von Eltern</h2>
+      <p>Was Familien an der Portanova besonders schätzen.</p>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal"><p>Schon beim Erstgespräch haben mein Mann und ich gespürt, wie sehr bei Ihnen das Wohl der Kinder im Mittelpunkt steht. Alle Lehrkräfte begegnen den Kindern mit spürbarer Wertschätzung und sorgen für eine vertrauensvolle Lernatmosphäre.</p><div class="who">Elternstimme</div></div>
+      <div class="quote reveal"><p>Unsere Kinder sind an Ihrer Schule ausgesprochen glücklich. Bei meinem älteren Sohn erlebe ich eine regelrechte Transformation: zuverlässiger, motivierter und mit deutlich gestiegener Eigenständigkeit.</p><div class="who">Elternstimme</div></div>
+      <div class="quote reveal"><p>Ihr Idealbild von Schule, bei dem nicht nur Wissen, sondern auch Herzlichkeit und Zusammenhalt im Vordergrund stehen, prägt das gesamte Klima. Besonders schätze ich, dass Sie selbst im Unterricht aktiv sind.</p><div class="who">Elternstimme</div></div>
+      <div class="quote reveal"><p>Ihnen gelingt es, anspruchsvolle Lerninhalte mit einer entspannten Unterrichtsform zu verbinden, sodass statt Druck eher Neugier und Begeisterung geweckt werden. Hervorzuheben ist das breit gefächerte Wahlfachangebot.</p><div class="who">Elternstimme</div></div>
+      <div class="quote reveal"><p>Seit der 6. Klasse hat unser Sohn bei Ihnen Vertrauen, Förderung und ein echtes schulisches Zuhause gefunden. In der Vorbereitung auf die Aufnahmeprüfung haben Sie an ihn geglaubt – ohne Ihre Unterstützung wäre dieser Schritt nicht möglich gewesen.</p><div class="who">Elternstimme</div></div>
+      <div class="quote reveal"><p>S. kam richtig glücklich und ‚geerdet‘ aus Frankreich zurück und hat begeistert von den Erlebnissen in der Natur erzählt. Wir danken von Herzen für so viel Einsatz, Zeit und Engagement.</p><div class="who">Elternstimme · 10. Schuljahr</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ANGEBOT -->
+<section id="angebot">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Angebot</span>
+      <h2>Bildung, die zu jedem Weg passt</h2>
+      <p>Wir führen eine 6. Klasse sowie mehrere 1.–3. Sekundarklassen der Stufe A. Dazu Gymivorbereitung, ein 10. Schuljahr, Berufswahlkunde, Multicheck- und Immersionskurse sowie ein vielfältiges Wahlfachangebot.</p>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-lead reveal">
+        <h3>Persönlich. Fördernd. Mit Niveau.</h3>
+        <p>Kleine Klassen, engagierte Lehrpersonen und ein Konzept, das Wissen mit Herzlichkeit und Zusammenhalt verbindet. Mental-Coaching bereitet auf Prüfungen und Herausforderungen vor.</p>
+        <a href="#kontakt" class="btn btn-primary" style="align-self:flex-start">Kontakt aufnehmen</a>
+      </div>
+      <div class="offer reveal" data-offer="sekundarschule" tabindex="0" role="button"><div class="ph"><img src="images/crop_710x480_5x0_resize_720x480_DSC_9678.jpg" alt="Sekundarschule"></div><div class="body"><h3>Sekundarschule</h3><p>1.–3. Sekundarklassen der Stufe A mit individueller Förderung und Berufswahlkunde.</p><span class="offer-more">Mehr erfahren <span>→</span></span></div></div>
+      <div class="offer reveal" data-offer="6-klasse" tabindex="0" role="button"><div class="ph"><img src="images/crop_710x480_6x0_resize_723x480_AdobeStock_46683790.jpg" alt="6. Klasse"></div><div class="body"><h3>6. Klasse</h3><p>Ein sanfter, fördernder Übertritt in die Sekundarstufe in vertrauensvollem Rahmen.</p><span class="offer-more">Mehr erfahren <span>→</span></span></div></div>
+      <div class="offer reveal" data-offer="10-schuljahr" tabindex="0" role="button"><div class="ph"><img src="images/crop_710x480_5x0_resize_720x480_AdobeStock_405751260.jpg" alt="10. Schuljahr"></div><div class="body"><h3>10. Schuljahr</h3><p>Für Schülerinnen und Schüler, die den Sek-A-Abschluss nachholen möchten.</p><span class="offer-more">Mehr erfahren <span>→</span></span></div></div>
+      <div class="offer reveal" data-offer="gymivorbereitung" tabindex="0" role="button"><div class="ph"><img src="images/crop_710x480_5x0_resize_721x480_DSC_0158.jpg" alt="Gymivorbereitung"></div><div class="body"><h3>Gymivorbereitung</h3><p>Vorbereitung auf Kurz- und Langzeitgymnasium – ideal kombiniert mit Mental-Coaching.</p><span class="offer-more">Mehr erfahren <span>→</span></span></div></div>
+      <div class="offer reveal" data-offer="wahlfaecher" tabindex="0" role="button"><div class="ph"><img src="images/crop_710x480_5x0_resize_719x480_bild_angebot_45.png" alt="Wahlfächer"></div><div class="body"><h3>Wahlfächer</h3><p>Ob kreativ, sportlich, sprachlich oder digital – eigene Interessen und Talente entfalten.</p><span class="offer-more">Mehr erfahren <span>→</span></span></div></div>
+      <div class="offer reveal" data-offer="kulturschiene" tabindex="0" role="button"><div class="ph"><img src="images/resize_710x473_Kulturschiene.jpg" alt="Kulturschiene think creative"></div><div class="body"><h3>Kulturschiene «think creative»</h3><p>Kultur, Events und Projekte an der Kulturschiene am Bahnhof Herrliberg.</p><span class="offer-more">Mehr erfahren <span>→</span></span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEITSATZ -->
+<section class="statement">
+  <div class="wrap reveal">
+    <span class="eyebrow" style="color:var(--blue-light);justify-content:center">Unser Leitgedanke</span>
+    <p class="statement-text">«Wissen vermitteln viele. Wir nehmen uns Zeit für die <em>Persönlichkeit</em> dahinter – mit kleinen Klassen, echtem Interesse und Raum zum Wachsen.»</p>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="soft-bg" id="team">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Team</span>
+      <h2>Das Portanova Team</h2>
+      <p>Unsere Lehrpersonen sind das Fundament der Schule. Fachwissen ist das eine – Persönlichkeit, Motivation und echtes Interesse an den Schülerinnen und Schülern sind mindestens so wichtig.</p>
+      <div class="team-hint reveal"><span class="ic" aria-hidden="true">↻</span><span class="lbl-hover">Karte anklicken für ein KI-Bild</span><span class="lbl-touch">Karte antippen für ein KI-Bild</span></div>
+    </div>
+    <div class="team-grid" id="teamGrid"></div>
+  </div>
+</section>
+
+<!-- GEBÄUDE -->
+<section id="gebaeude">
+  <div class="wrap building">
+    <div class="reveal">
+      <span class="eyebrow">Gebäude</span>
+      <h2 style="font-size:clamp(2rem,3.6vw,2.9rem);margin-bottom:16px">In der historischen Kaffee-Hag-Fabrik</h2>
+      <p style="color:var(--muted);font-size:1.05rem">Unser Schulgebäude befindet sich in der wunderschönen alten Kaffee-Hag-Fabrik in nächster Nähe zum Zürisee. Der Bahnhof Herrliberg-Feldmeilen liegt direkt neben dem Gebäude. Wir verfügen über acht grosszügige, helle Schulzimmer sowie ein Atelier. Zur Portanova gehört auch die Kulturschiene am Bahnhof Herrliberg.</p>
+      <div class="building-feats">
+        <div class="feat"><div class="k">8</div><div class="v">grosszügige Schulzimmer</div></div>
+        <div class="feat"><div class="k">1</div><div class="v">kreatives Atelier</div></div>
+        <div class="feat"><div class="k">0 m</div><div class="v">zum S-Bahnhof</div></div>
+        <div class="feat"><div class="k">Zürisee</div><div class="v">in nächster Nähe</div></div>
+      </div>
+    </div>
+    <div class="building-img reveal"><img src="images/DJI_20260527102105_0011_D1.jpg" alt="Portanova Schulgebäude von oben"></div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section class="soft-bg" id="galerie">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Galerie</span>
+      <h2>Manchmal sagen Bilder mehr als tausend Worte</h2>
+      <p>Eindrücke unserer Exkursionen, Sporttage, Projekte und Klassenlager – Aktivitäten, die den Horizont lebhaft erweitern.</p>
+    </div>
+    <div class="gallery" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- WEITERES -->
+<section id="weiteres">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Weiteres</span>
+      <h2>Mehr über Portanova</h2>
+      <p>Ob in unserer Schulbroschüre oder in den sozialen Medien – wir freuen uns, Ihnen einen Eindruck zu vermitteln.</p>
+    </div>
+    <div class="links-grid" id="linksGrid"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="soft-bg" id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" style="justify-content:center">Häufige Fragen</span>
+      <h2>Gut zu wissen</h2>
+      <p>Die häufigsten Fragen rund um Anmeldung, Unterricht und Schulalltag – kurz beantwortet.</p>
+    </div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="soft-bg" id="kontakt">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" style="justify-content:center">Kontakt</span>
+      <h2>Nehmen Sie Kontakt mit uns auf</h2>
+      <p>Wir freuen uns auf Ihre Anfrage – ob Besuchstermin, Gymivorbereitung oder eine sonstige Frage.</p>
+    </div>
+    <div class="contact">
+      <div class="contact-info reveal">
+        <h3>Portanova Privatschule AG</h3>
+        <p class="lead">Direkt am S-Bahnhof Herrliberg-Feldmeilen.</p>
+        <div class="ci-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="lbl">Adresse</div><a class="val" href="https://www.google.co.jp/maps/place/Portanova+Privatschule+AG/@47.280247,8.614772,18z" target="_blank" rel="noopener">General-Wille-Strasse 59<br>8706 Feldmeilen ZH</a></div></div>
+        <div class="ci-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="lbl">E-Mail</div><a class="val" href="mailto:info@privatschule.ch">info@privatschule.ch</a></div></div>
+        <div class="ci-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="lbl">Telefon</div><a class="val" href="tel:+41438437043">+41 43 843 70 43</a></div></div>
+        <a href="https://www.google.co.jp/maps/place/Portanova+Privatschule+AG/@47.280247,8.614772,18z" target="_blank" rel="noopener" class="btn btn-light" style="margin-top:8px">Zur Karte / Routenplaner</a>
+      </div>
+
+      <form class="form-card reveal" id="contactForm" novalidate>
+        <div class="grid-2">
+          <div class="field"><label>Anfragegrund</label><select name="grund"><option>Besuchstermin</option><option>Gymivorbereitung</option><option>sonstige Fragen</option></select></div>
+          <div class="field"><label>Geschlecht</label><select name="geschlecht"><option value="">Bitte auswählen…</option><option>männlich</option><option>weiblich</option><option>andere</option></select></div>
+        </div>
+        <div class="grid-2">
+          <div class="field"><label>Name</label><input type="text" name="name" placeholder="Name des Kindes"></div>
+          <div class="field"><label>Geburtsdatum *</label><input type="text" name="geburtsdatum" placeholder="TT.MM.JJJJ" required></div>
+        </div>
+        <div class="field"><label>Adresse</label><input type="text" name="adresse" placeholder="Strasse, PLZ Ort"></div>
+        <div class="field"><label>Schule, Klasse, Stufe</label><input type="text" name="schule" placeholder="aktuelle Schule / Stufe"></div>
+        <div class="grid-2">
+          <div class="field"><label>Elternname *</label><input type="text" name="elternname" required></div>
+          <div class="field"><label>Telefon *</label><input type="tel" name="telefon" required></div>
+        </div>
+        <div class="field"><label>E-Mail *</label><input type="email" name="email" required placeholder="name@beispiel.ch"></div>
+        <div class="field"><label>Mitteilung</label><textarea name="mitteilung" placeholder="Ihre Nachricht an uns…"></textarea></div>
+        <p class="form-note">*-Felder bitte ausfüllen</p>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Senden</button>
+        <div class="form-success" id="formSuccess">Vielen Dank! Ihre Anfrage wurde übermittelt. Wir melden uns in Kürze.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ALBUM LIGHTBOX -->
+<div class="lb" id="lightbox" aria-hidden="true">
+  <div class="lb-head">
+    <div><h3 id="lbTitle"></h3><div class="meta" id="lbMeta"></div></div>
+    <button class="lb-close" id="lbClose" aria-label="Schliessen">×</button>
+  </div>
+  <div class="lb-grid" id="lbGrid"></div>
+</div>
+<!-- SINGLE PHOTO VIEWER -->
+<div class="pv" id="photoViewer" aria-hidden="true">
+  <button class="pv-close" id="pvClose" aria-label="Schliessen">×</button>
+  <button class="pv-btn pv-prev" id="pvPrev" aria-label="Zurück">‹</button>
+  <img id="pvImg" src="" alt="">
+  <button class="pv-btn pv-next" id="pvNext" aria-label="Weiter">›</button>
+  <div class="pv-count" id="pvCount"></div>
+</div>
+
+<!-- SCHULBROSCHÜRE VIEWER -->
+<div class="bv" id="broschuere" aria-hidden="true">
+  <div class="bv-head">
+    <div class="bv-title">Schulbroschüre<span class="bv-sub">Portanova Privatschule</span></div>
+    <button class="bv-close" id="bvClose" aria-label="Schliessen">×</button>
+  </div>
+  <div class="bv-stage">
+    <button class="bv-nav bv-prev" id="bvPrev" aria-label="Vorherige Seite">‹</button>
+    <img class="bv-img" id="bvImg" src="" alt="Schulbroschüre Seite">
+    <button class="bv-nav bv-next" id="bvNext" aria-label="Nächste Seite">›</button>
+  </div>
+  <div class="bv-foot">
+    <div class="bv-count" id="bvCount"></div>
+  </div>
+</div>
+
+<!-- ANGEBOT-DETAIL-MODAL -->
+<div class="om" id="offerModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="omTitle">
+  <div class="om-panel">
+    <div class="om-head">
+      <div><span class="eyebrow">Angebot</span><h3 id="omTitle"></h3></div>
+      <button class="om-close" id="omClose" aria-label="Schliessen">×</button>
+    </div>
+    <div class="om-body" id="omBody"></div>
+    <div class="om-foot"><a href="#kontakt" class="btn btn-primary" id="omCta">Beratung anfragen</a></div>
+  </div>
+</div>
+
+<!-- STICKY MOBILE-KONTAKTLEISTE -->
+<div class="mobile-bar">
+  <a href="tel:+41438437043" class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Anrufen</a>
+  <a href="#kontakt" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>Anfrage</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="images/portanova_logo-small.png" alt="Portanova">
+        <p>Portanova Privatschule AG – persönliche Bildung mit Niveau in der historischen Kaffee-Hag-Fabrik am Zürichsee.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/portanova_privatschule/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+          <a href="https://www.facebook.com/portanovaprivatschule/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.youtube.com/@PortanovaPrivatschule" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <a href="#news">News</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#angebot">Angebot</a>
+        <a href="#team">Team</a>
+        <a href="#gebaeude">Gebäude</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#weiteres">Weiteres</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <a href="mailto:info@privatschule.ch">info@privatschule.ch</a>
+        <a href="tel:+41438437043">+41 43 843 70 43</a>
+        <a>General-Wille-Strasse 59</a>
+        <a>8706 Feldmeilen ZH</a>
+        <a href="https://privatschulen-schweiz.ch" target="_blank" rel="noopener">privatschulen-schweiz.ch</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Portanova Privatschule AG</div>
+      <div><a href="#">Datenschutz</a> &nbsp;·&nbsp; <a href="#">Impressum</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="gallery-data.js"></script>
+<script>
+  // ---- Header scroll state ----
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 30);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // ---- Mobile menu ----
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // ---- Team data ----
+  const P = 'images/';
+  const team = [
+    ['Thomas', 'Baumann', 'Schul- & Geschäftsleitung · Mathematik, Informatik, Sport, ECDL', 'crop_500x700_0x25_resize_500x750_KI-Bild-Thomas.png', 'crop_500x700_13x0_resize_525x700_Portrait-Foto-Thomas-Baumann.jpg'],
+    ['Hajo', 'Herzog', 'Schul- & Geschäftsleitung · Mathematik, Medien/Informatik, Wirtschaft & Recht, Sport, ECDL', 'crop_500x700_0x25_resize_500x750_KI-Bild-Hajo-5.png', 'crop_500x700_13x0_resize_525x700_Hajo-Portrait-Foto-3.jpg'],
+    ['Céline', 'Decurtins', 'Leitung Gymi- & Probezeitvorbereitung · Mathematik, Geometrie, Naturwissenschaften, Geografie', 'crop_500x700_0x25_resize_500x750_KI-Bild-Celine.png', 'crop_500x700_12x0_resize_525x700_Portrait-Foto-Celine-Decurtins2.jpg'],
+    ['Danique', 'Wolffram', 'Englisch, English Cambridge, Informatik, Niederländisch, Theater', 'crop_500x700_0x25_resize_500x750_KI-Bild-Danique.png', 'crop_500x700_13x0_resize_525x700_Portrait-Foto-Danique-Wolffram2.jpg'],
+    ['Tim', 'Loughrin', 'Mathematik, Englisch, Geografie, Theater', 'crop_500x700_13x0_resize_525x700_KI-Bild-Tim.png', 'crop_500x700_12x0_resize_525x700_Tim.jpg'],
+    ['Katrin', 'Herzog', 'Französisch, Deutsch, Gymivorbereitung & Progymi Deutsch', 'crop_500x700_0x25_resize_500x750_KI-Bild-Katrin-6.png', 'crop_500x700_13x0_resize_525x700_Katrin-Portrait-Foto.jpg'],
+    ['Simone', 'Barth', 'Französisch, Englisch, Sport, Natur/Mensch/Gesellschaft, Geografie, Geschichte', 'crop_500x700_0x25_resize_500x750_KI-Bild-Simone.jpg', 'crop_500x700_13x0_resize_525x700_Simone-Portrait-Foto-2.jpg'],
+    ['Eva', 'Fäh', 'Deutsch, Deutsch als Fremdsprache', 'crop_500x700_0x25_resize_500x750_KI-Bild-Eva.jpg', 'crop_500x700_13x0_resize_525x700_Eva-Portrait-Foto-2.jpg'],
+    ['Michele', 'Danieli', 'Deutsch, Gymi- & Probezeitvorbereitung Deutsch, Kalligraphie, Italienisch', 'crop_500x700_0x25_resize_500x750_KI-Bild-Michele1.jpg', 'crop_500x700_13x0_resize_525x700_Michele-Portrait-Foto.jpg'],
+    ['Daiana', 'Gandossi', 'Assistentin der Schulleitung & Finanzbuchhaltung', 'crop_500x700_0x25_resize_500x750_KI-Bild-Daiana.png', 'crop_500x700_13x0_resize_525x700_Portraitfoto-Daiana.jpg'],
+    ['Irina', 'Bowald', 'Deutsch, Französisch, Sport, Projektunterricht, Mental Coaching', 'crop_500x700_0x25_resize_500x750_KI-Bild-Irina.jpg', 'crop_500x700_12x0_resize_525x700_Irina2.jpg'],
+    ['Nadine', 'Caplunik', 'Werken, Gestalten, Atelier, Berufswahlkunde, Gestalterischer Vorkurs, Töpfern, Art', 'crop_500x700_5x0_resize_509x700_KI-Bild-Nadine.png', 'crop_500x700_20x0_resize_540x700_Nadine2.jpg'],
+    ['Dorothee', 'Perner', 'Naturwissenschaft, Mathematik, Geografie', 'crop_500x700_0x25_resize_500x750_KI-Bild-Doro.png', 'crop_500x700_12x0_resize_523x700_Portrait-Foto-Doro-1-5.jpg'],
+    ['Bettina', 'Bühler', 'Assistentin der Schulleitung', 'crop_500x700_0x25_resize_500x750_KI-Bild-Bettina.jpg', 'crop_500x700_13x0_resize_525x700_Bettina-Portrait-Foto.jpg'],
+    ['Carlos', 'Pestana', 'Französisch, Geschichte, Medien & Informatik, Staatskunde, Programmieren & Robotik, ECDL', 'crop_500x700_13x0_resize_525x700_KI-Bild-Carlos.png', 'crop_500x700_13x0_resize_525x700_Carlos-Portrait-Foto.jpg'],
+    ['Anke', 'Pera', 'Coaching', 'crop_500x700_13x0_resize_525x700_KI-Bild-Anke.png', 'crop_500x700_13x0_resize_525x700_Anke-Portrait-Foto.jpg'],
+    ['Larissa', 'Spälti', 'Mathematik', 'crop_500x700_0x25_resize_500x750_KI-Bild-Larissa.jpg', 'crop_500x700_13x0_resize_525x700_Larissa-S.jpg'],
+    ['Monika', 'Keller', 'Sport, Wirtschaft & Recht', 'crop_500x700_0x25_resize_500x750_KI-Bild-Monika.jpg', 'crop_500x700_13x0_resize_525x700_Portrait-Foto-Monika-Keller.jpg'],
+    ['Lovis', 'Friess', 'Sport', 'crop_500x700_0x25_resize_500x750_KI-Bild-Lovis.jpg', 'crop_500x700_13x0_resize_525x700_Lovis.jpg'],
+    ['Adeyemi', 'Larry', 'Bildnerisches und technisches Gestalten, Art, Atelier', 'crop_500x700_13x0_resize_525x700_KI-Bild-Yemi.png', 'crop_500x700_13x0_resize_525x700_Yemi-Portrait-Foto.jpg'],
+    ['Nicolas', 'Chicherio', 'Medien & Informatik', 'crop_500x700_0x25_resize_500x750_KI-Bild-Nicolas.png', 'crop_500x700_13x0_resize_525x700_Nicola.jpg'],
+    ['Anja', 'Insua', 'Spanisch, Mittagstisch', 'crop_500x700_0x25_resize_500x750_KI-Bild-Anja.jpg', 'crop_500x700_12x0_resize_525x700_Portrait-Foto-Anja-Insua.jpg'],
+    ['Neetha', 'Mahabeer', 'Englisch', 'crop_500x700_0x25_resize_500x750_KI-Bild-Neetha.png', 'crop_500x700_13x0_resize_525x700_Neetha.jpg'],
+    ['Jessica', 'Hanke', 'Mittagstisch', 'crop_500x700_0x25_resize_500x750_KI-Bild-Jessica.png', 'crop_500x700_35x0_resize_569x700_Portrait-Foto-Jessica-Hanke.jpg'],
+    ['Aída', 'Barja', 'Assistentin der Schulleitung', 'crop_500x700_0x25_resize_500x750_KI-Bild-Aida.jpg', 'crop_500x700_13x0_resize_525x700_Aida-Portrait-Foto.jpg'],
+  ];
+  const teamGrid = document.getElementById('teamGrid');
+  teamGrid.innerHTML = team.map(m => `
+    <div class="member reveal" tabindex="0" role="button" aria-label="${m[0]} ${m[1]} – Karte umdrehen für Details">
+      <div class="member-inner">
+        <div class="member-face member-front">
+          <img loading="lazy" src="${P}${m[4]}" alt="${m[0]} ${m[1]}">
+          <div class="flip-cue" aria-hidden="true">↻</div>
+          <div class="info"><div class="nm">${m[0]} ${m[1]}</div></div>
+        </div>
+        <div class="member-face member-back">
+          <img loading="lazy" src="${P}${m[3]}" alt="${m[0]} ${m[1]} – KI-Bild">
+          <div class="ki-tag" aria-hidden="true">KI</div>
+          <div class="info"><div class="nm">${m[0]} ${m[1]}</div><div class="role">${m[2]}</div></div>
+        </div>
+      </div>
+    </div>`).join('');
+  teamGrid.addEventListener('click', e => {
+    const card = e.target.closest('.member'); if(card) card.classList.toggle('flipped');
+  });
+  teamGrid.addEventListener('keydown', e => {
+    if((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('member')){
+      e.preventDefault(); e.target.classList.toggle('flipped');
+    }
+  });
+
+  // ---- Gallery (Alben + Fotos aus gallery-data.js) ----
+  const albumPath = slug => `${P}galleries/${slug}/`;
+  document.getElementById('galleryGrid').innerHTML = GALLERY_ALBUMS.map((a, i) => {
+    const [title, cover, slug] = a;
+    const n = (GALLERY_PHOTOS[slug] || []).length;
+    return `<div class="album reveal" data-i="${i}">
+      <img loading="lazy" src="${P}${cover}" alt="${title}">
+      ${n ? `<div class="count">📷 ${n}</div>` : ''}
+      <div class="cap">${title}</div>
+    </div>`;
+  }).join('');
+
+  // ---- Lightbox (Album-Übersicht) ----
+  const lb = document.getElementById('lightbox');
+  const lbGrid = document.getElementById('lbGrid');
+  const lbTitle = document.getElementById('lbTitle');
+  const lbMeta = document.getElementById('lbMeta');
+  let currentPhotos = [];
+
+  function openAlbum(i){
+    const [title, , slug] = GALLERY_ALBUMS[i];
+    const photos = GALLERY_PHOTOS[slug] || [];
+    currentPhotos = photos.map(f => albumPath(slug) + f);
+    lbTitle.textContent = title;
+    lbMeta.textContent = photos.length ? `${photos.length} Fotos` : 'Keine Fotos vorhanden';
+    lbGrid.innerHTML = currentPhotos.map((src, idx) =>
+      `<img loading="lazy" src="${src}" alt="${title} ${idx+1}" data-idx="${idx}">`).join('');
+    lb.classList.add('open'); document.body.style.overflow='hidden';
+  }
+  function closeAlbum(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+
+  document.getElementById('galleryGrid').addEventListener('click', e => {
+    const card = e.target.closest('.album'); if(card) openAlbum(+card.dataset.i);
+  });
+  document.getElementById('lbClose').addEventListener('click', closeAlbum);
+  lb.addEventListener('click', e => { if(e.target === lb) closeAlbum(); });
+
+  // ---- Einzel-Foto-Viewer (mit Vor/Zurück) ----
+  const pv = document.getElementById('photoViewer');
+  const pvImg = document.getElementById('pvImg');
+  const pvCount = document.getElementById('pvCount');
+  let pvIdx = 0;
+  function showPhoto(idx){
+    pvIdx = (idx + currentPhotos.length) % currentPhotos.length;
+    pvImg.src = currentPhotos[pvIdx];
+    pvCount.textContent = `${pvIdx+1} / ${currentPhotos.length}`;
+  }
+  lbGrid.addEventListener('click', e => {
+    if(e.target.tagName === 'IMG'){ showPhoto(+e.target.dataset.idx); pv.classList.add('open'); }
+  });
+  document.getElementById('pvClose').addEventListener('click', () => pv.classList.remove('open'));
+  document.getElementById('pvPrev').addEventListener('click', () => showPhoto(pvIdx-1));
+  document.getElementById('pvNext').addEventListener('click', () => showPhoto(pvIdx+1));
+  pv.addEventListener('click', e => { if(e.target === pv) pv.classList.remove('open'); });
+  document.addEventListener('keydown', e => {
+    if(pv.classList.contains('open')){
+      if(e.key==='ArrowRight') showPhoto(pvIdx+1);
+      else if(e.key==='ArrowLeft') showPhoto(pvIdx-1);
+      else if(e.key==='Escape') pv.classList.remove('open');
+    } else if(lb.classList.contains('open') && e.key==='Escape') closeAlbum();
+  });
+
+  // ---- SVG-Icons (Lucide-Stil) ----
+  const svg = inner => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${inner}</svg>`;
+  const ICONS = {
+    brochure: svg('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/>'),
+    exam: svg('<rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>'),
+    costs: svg('<path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/>'),
+    calendar: svg('<rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 2v4"/><path d="M16 2v4"/>'),
+    instagram: svg('<rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>'),
+    facebook: svg('<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>'),
+    youtube: svg('<path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/>'),
+    podcast: svg('<path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>'),
+  };
+
+  // ---- Weiteres links ----
+  const links = [
+    ['brochure','Schulbroschüre','Blättern Sie online durch unsere Imagebroschüre.','#broschuere'],
+    ['exam','Aufnahmeprüfung','Alle Infos zur Aufnahmeprüfung.','https://www.zh.ch/de/bildung/schulen/maturitaetsschule/zentrale-aufnahmepruefung.html'],
+    ['costs','Kostenübersicht','Transparente Schulgeld-Übersicht (PDF).','dokumente/Kostenuebersicht-SJ26-27.pdf'],
+    ['calendar','Ferienplan','Der aktuelle Ferienplan.','https://www.privatschule.ch/ferienplan'],
+    ['instagram','Instagram','Einblicke aus dem Schulalltag.','https://www.instagram.com/portanova_privatschule/'],
+    ['facebook','Facebook','Folgen Sie uns auf Facebook.','https://www.facebook.com/portanovaprivatschule/'],
+    ['youtube','YouTube','Podcast «Portanova im Gespräch».','https://www.youtube.com/@PortanovaPrivatschule'],
+    ['podcast','Spotify','Den Podcast unterwegs hören.','https://open.spotify.com/show/033wuZLVazP9TFdsxmvE7T'],
+  ];
+  document.getElementById('linksGrid').innerHTML = links.map(l => `
+    <a class="link-card reveal" href="${l[3]}" ${(l[3].startsWith('http')||l[3].endsWith('.pdf'))?'target="_blank" rel="noopener"':''}>
+      <div class="ic">${ICONS[l[0]]||''}</div><div class="t">${l[1]}</div><div class="d">${l[2]}</div></a>`).join('');
+
+  // ---- Schulbroschüre (integrierter Viewer) ----
+  const BV_PAGES = 24;
+  const bvPath = n => `images/broschuere/seite-${String(n).padStart(2,'0')}.jpg`;
+  const bv = document.getElementById('broschuere');
+  const bvImg = document.getElementById('bvImg');
+  const bvCount = document.getElementById('bvCount');
+  let bvIdx = 1;
+  function bvShow(n){
+    bvIdx = ((n - 1 + BV_PAGES) % BV_PAGES) + 1; // 1..24, mit Umlauf
+    bvImg.src = bvPath(bvIdx);
+    bvImg.alt = `Schulbroschüre Seite ${bvIdx}`;
+    bvCount.textContent = `Seite ${bvIdx} / ${BV_PAGES}`;
+    [bvIdx + 1, bvIdx - 1].forEach(k => { const im = new Image(); im.src = bvPath(((k - 1 + BV_PAGES) % BV_PAGES) + 1); }); // Nachbarseiten vorladen
+  }
+  function bvOpen(){ bvShow(1); bv.classList.add('open'); bv.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function bvClose(){ bv.classList.remove('open'); bv.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  document.getElementById('linksGrid').addEventListener('click', e => {
+    const a = e.target.closest('a');
+    if(a && a.getAttribute('href') === '#broschuere'){ e.preventDefault(); bvOpen(); }
+  });
+  document.getElementById('bvClose').addEventListener('click', bvClose);
+  document.getElementById('bvPrev').addEventListener('click', () => bvShow(bvIdx - 1));
+  document.getElementById('bvNext').addEventListener('click', () => bvShow(bvIdx + 1));
+  bv.addEventListener('click', e => { if(e.target === bv || e.target.classList.contains('bv-stage')) bvClose(); });
+  document.addEventListener('keydown', e => {
+    if(!bv.classList.contains('open')) return;
+    if(e.key === 'ArrowRight') bvShow(bvIdx + 1);
+    else if(e.key === 'ArrowLeft') bvShow(bvIdx - 1);
+    else if(e.key === 'Escape') bvClose();
+  });
+
+  // ---- Angebot-Detailinhalte (von privatschule.ch übernommen) ----
+  const OFFER_CONTENT = {
+    'sekundarschule': {title:'Sekundarschule', html:`
+      <img class="om-img" src="images/angebote/sekundarschule.jpg" alt="Sekundarschule Portanova" loading="lazy">
+      <p>Wir sind eine staatlich bewilligte Privatschule, die ihren Schülerinnen und Schülern der Sekundarstufe A eine grosse Auswahl an Wahlfächern bietet. Wahlweise kann bei uns die Immersionsklasse oder der Immersionskurs besucht werden. In diesem Kurs wird das Fach Mathematik auf Englisch unterrichtet.</p>
+      <p>Bei uns stehen die Jugendlichen im Mittelpunkt und werden befähigt, in einem wertschätzenden Klima, hohe persönliche und berufliche Ziele zu erreichen.</p>`},
+    '6-klasse': {title:'6. Klasse', html:`
+      <img class="om-img" src="images/angebote/6-klasse.png" alt="6. Klasse" loading="lazy">
+      <p>Wir bereiten Schülerinnen und Schüler des sechsten Primarschuljahres in einem vertrauensvollen und wertschätzenden Lehrer-Schüler-Verhältnis auf die Sekundarschule A oder auf Wunsch auf das Langzeitgymnasium vor. Wie auch in unseren Sekundarklassen, überzeugen wir im sechsten Primarschuljahr durch eine Vielzahl an Wahlfächern, kleine Klassengrössen, eine angenehme Lernatmosphäre und vor allem auch dadurch, dass sich unsere Lehrpersonen täglich für die Freude am Lernen einsetzen.</p>`},
+    '10-schuljahr': {title:'10. Schuljahr', html:`
+      <img class="om-img" src="images/angebote/10-schuljahr.png" alt="10. Schuljahr Übersicht" loading="lazy">
+      <p>Das 10. Schuljahr an der Portanova Privatschule bietet Schülerinnen und Schülern einen individuellen, flexiblen und zukunftsorientierten Bildungsweg. Es richtet sich sowohl an Jugendliche, die ihre Chancen auf eine Lehrstelle verbessern möchten, als auch an jene, die sich gezielt auf die Gymiprüfung vorbereiten wollen.</p>
+      <h4>Zielgruppen</h4>
+      <ul>
+        <li><strong>Sek-B-Schüler:innen:</strong> Möglichkeit, die 3. Sek A nachzuholen, Fokus auf Berufswahl.</li>
+        <li><strong>Sek-A-Schüler:innen:</strong> Vorbereitung auf die Gymiprüfung (ZAP), Stoff der 2. und 3. Sek.</li>
+        <li><strong>Schüler:innen mit Spezialbedürfnissen:</strong> z. B. Leistungssportler:innen, Künstler:innen, Musiker:innen mit flexiblem Stundenplan.</li>
+      </ul>
+      <h4>Besondere Angebote</h4>
+      <ul>
+        <li>Miniunternehmen (YES – Switzerland)</li>
+        <li>Internationale Diplome: Französisch DELF, Englisch Cambridge, ECDL</li>
+        <li>Individuelles Berufswahl-Coaching inkl. Bewerbungstraining &amp; Multicheck-Vorbereitung</li>
+        <li>Praktikumsmöglichkeiten während des Schuljahres</li>
+        <li>Leistungssportförderung durch flexible Unterrichtszeiten und Vereinskooperationen</li>
+        <li>Internationale Erfahrungen: Reise nach Australien (Partnerschule) sowie Kurzaufenthalt in Frankreich (Sprache u. Biologie im Burgund)</li>
+      </ul>
+      <h4>Pädagogische Vorteile</h4>
+      <ul>
+        <li>Individuelle Förderung in kleinen Klassen</li>
+        <li>Hohe Betreuungsintensität durch persönliche Coaches</li>
+        <li>Kombination von Praxis (Berufswelt, Praktika) und Theorie (Gymivorbereitung, Diplome)</li>
+        <li>Flexible Stundenplangestaltung, massgeschneidert für die Bedürfnisse der Jugendlichen</li>
+      </ul>
+      <h4>Vorteile eines 10. Schuljahres</h4>
+      <ul>
+        <li>Keine Schulpflicht mehr → grosse Gestaltungsfreiheit</li>
+        <li>Lücken schliessen (fachlich und persönlich)</li>
+        <li>Berufsreife stärken &amp; Bewerbungsprozesse begleiten</li>
+        <li>Gymichancen erhöhen durch gezielte Vorbereitung</li>
+        <li>Strukturierte, sichere Lernumgebung statt „Zwischenjahr“</li>
+      </ul>
+      <h4>Warum Portanova?</h4>
+      <ul>
+        <li>Einmalige Kombination aus Berufsvorbereitung, Diplomen, Gymi-Vorbereitung, Praktikumsmöglichkeiten, internationalen Austauschprogrammen und individueller Sportförderung</li>
+        <li>Massgeschneiderte Stundenpläne, wie sie an öffentlichen Schulen nicht möglich sind</li>
+        <li>Persönliche Begleitung durch Coaches</li>
+        <li>Innovatives, modernes Umfeld mit familiärer Atmosphäre</li>
+      </ul>`},
+    'gymivorbereitung': {title:'Gymivorbereitung', html:`
+      <h4>1:1 Gymivorbereitung – Dein Sprung ans Gymi!</h4>
+      <p>Ab dem Startdatum August 2026 und dem Startdatum Oktober 2026 bietet die Portanova Privatschule eine exklusive 1:1-Vorbereitung auf die Zentrale Aufnahmeprüfung (ZAP) Kanton Zürich an. Ebenfalls bereiten wir im 1:1-Konzept eine Vorbereitung auf private Gymnasien, wie z. B. das Gymi-Unterstrass, an.</p>
+      <p>Individuell, persönlich und effektiv – genau abgestimmt auf die Bedürfnisse Ihres Kindes. Unsere Vorbereitungsschüler:innen arbeiten mit speziell geschulten Coaches – Gymnasiast:innen, die den Weg ans Gymnasium selbst erfolgreich gemeistert haben. Sie werden von unseren Lehrpersonen begleitet und unterrichten mit unseren bewährten Portanova-Unterlagen.</p>
+      <h4>Ihre Vorteile</h4>
+      <ul>
+        <li><strong>Individuelle 1:1-Betreuung:</strong> Ihr Kind lernt im eigenen Tempo und nach seinen Bedürfnissen.</li>
+        <li><strong>Gezielte Förderung:</strong> Stärken werden gefördert, Schwächen rasch erkannt und systematisch aufgearbeitet.</li>
+        <li><strong>Ansprechperson auf Augenhöhe:</strong> Unsere jungen Coaches motivieren, erklären und begleiten.</li>
+        <li><strong>Flexible Buchungszeiten:</strong> Unterrichtseinheiten sind werktags sowie samstags individuell buchbar.</li>
+        <li><strong>Attraktive Konditionen:</strong> 1:1-Betreuung zu fairen Preisen.</li>
+        <li><strong>Professionelle Qualität:</strong> Steter Austausch zwischen Coaches und Fachlehrpersonen sichert höchste Standards.</li>
+      </ul>
+      <p>Fächer: Mathematik und Deutsch – einzeln oder kombiniert. Für Gymi-Unterstrass alle prüfungsrelevanten Fächer.</p>
+      <h4>Externer Gruppenkurs – gezielt, persönlich, erfolgreich</h4>
+      <p>Unsere bewährten Gymivorbereitungskurse richten sich an motivierte Schülerinnen und Schüler, die sich optimal auf die Aufnahmeprüfung vorbereiten möchten – ob für das Langzeitgymnasium ab der 6. Klasse oder für das Kurzzeitgymnasium, die HMS, FMS, IMS oder die BMS. Die Kurse finden in bewusst klein gehaltenen Gruppen statt. So stellen wir sicher, dass jede Schülerin und jeder Schüler individuell gefördert wird.</p>
+      <p><strong>Unsere Stärken:</strong></p>
+      <ul>
+        <li>Erfahrene Lehrpersonen, die auf Gymivorbereitung spezialisiert sind</li>
+        <li>Langjährige Erfahrung mit konstant hohen Erfolgsquoten</li>
+        <li>Aufsatztraining, mit der Möglichkeit, jederzeit einen Aufsatz zum Korrigieren zu geben</li>
+        <li>Simulationsprüfung</li>
+        <li>Unterricht mit Fokus auf Prüfungsstrategie, Stoffvertiefung und Selbstvertrauen</li>
+      </ul>
+      <p>Unsere Lehrpersonen wissen, worauf es ankommt – viele von ihnen korrigieren selbst Aufnahmeprüfungen an Zürcher Gymnasien und kennen die Anforderungen aus erster Hand.</p>
+      <h4>Interner Gruppenkurs für Portanova-Schüler:innen</h4>
+      <ul>
+        <li>Erfahrene Lehrpersonen, spezialisiert auf die Gymivorbereitung</li>
+        <li>Aufsatztraining mit individueller Korrekturmöglichkeit</li>
+        <li>Realitätsnahe Simulationsprüfungen</li>
+        <li>Fokus auf Prüfungsstrategie, Stoffvertiefung und Selbstvertrauen</li>
+      </ul>
+      <p>Unser interner Kurs ist in den Stundenplan integriert – der Mittwochnachmittag bleibt frei. Ergänzend bieten wir Wahlfächer wie Mentalcoaching, um gezielt den Umgang mit Prüfungsdruck zu fördern. Die Anmeldung erfolgt für interne Schülerinnen und Schüler im Regelfall über die Klassenlehrperson und/oder die Administration.</p>
+      <p><strong>Portanova Privatschule – Dein Sprung ans Gymi. Jetzt anmelden und Platz sichern!</strong></p>`},
+    'wahlfaecher': {title:'Wahlfächer', html:`
+      <img class="om-img" src="images/angebote/wahlfaecher.jpg" alt="Wahlfächer Übersicht" loading="lazy">
+      <p>Für alle, die mehrere Fachrichtungen kombinieren und von weiteren Zusatzangeboten profitieren möchten, stehen verschiedene Wahlfächer zur Verfügung. Jede Schülerin und jeder Schüler erhält einen individuellen Stundenplan, in dem auch besondere Anliegen, wie z. B. Trainingszeiten für Leistungssport, berücksichtigt werden können.</p>
+      <h4>Sprachdiplome</h4>
+      <p>Bei uns können international anerkannte Sprachdiplome erworben werden – etwa das Cambridge English Certificate oder die französischen DELF/DALF-Diplome.</p>
+      <div class="om-links">
+        <a href="https://www.cambridgeenglish.org/" target="_blank" rel="noopener">Cambridge English ↗</a>
+        <a href="https://delfdalf.ch/" target="_blank" rel="noopener">DELF / DALF ↗</a>
+      </div>`},
+    'kulturschiene': {title:'Kulturschiene «think creative»', html:`
+      <img class="om-img" src="images/angebote/kulturschiene-1.jpg" alt="Kulturschiene am Bahnhof Herrliberg" loading="lazy">
+      <p>Mit unserer «Kulturschiene» sind wir wohl die einzigste Schule weltweit mit eigenem Bahnhofsgebäude. Der ehemalige SBB-Güterschuppen ist für uns das Spielzimmer für kreatives Denken.</p>
+      <p>«think creative» ist ein Ansatz, der Schülerinnen und Schüler auf die Anforderungen der Zukunft vorbereitet. Wir trainieren mit unseren Jugendlichen, mit Kreativität komplexe Probleme zu lösen. Die Einbindung unserer Wahlfächer und unserer spezialisierten Lehrpersonen tun ihr Übriges dazu, um unsere Kulturschiene zum kreativen Übungsraum zu machen.</p>
+      <img class="om-img" src="images/angebote/kulturschiene-2.png" alt="Kulturschiene «think creative»" loading="lazy">`},
+  };
+  const om = document.getElementById('offerModal');
+  const omTitle = document.getElementById('omTitle');
+  const omBody = document.getElementById('omBody');
+  function omOpen(key){
+    const data = OFFER_CONTENT[key]; if(!data) return;
+    omTitle.textContent = data.title;
+    omBody.innerHTML = data.html;
+    omBody.scrollTop = 0;
+    // nachträglich eingefügte Bilder einblenden (sonst per Fade-in-Regel unsichtbar)
+    omBody.querySelectorAll('img[loading="lazy"]').forEach(im => {
+      if(im.complete) im.classList.add('img-in');
+      else { im.addEventListener('load', () => im.classList.add('img-in'), {once:true});
+             im.addEventListener('error', () => im.classList.add('img-in'), {once:true}); }
+    });
+    om.classList.add('open'); om.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+  }
+  function omClose(){ om.classList.remove('open'); om.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  document.querySelectorAll('.offer[data-offer]').forEach(card => {
+    card.addEventListener('click', () => omOpen(card.dataset.offer));
+    card.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); omOpen(card.dataset.offer); } });
+  });
+  document.getElementById('omClose').addEventListener('click', omClose);
+  document.getElementById('omCta').addEventListener('click', omClose); // schliesst Modal und springt zu #kontakt
+  om.addEventListener('click', e => { if(e.target === om) omClose(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && om.classList.contains('open')) omClose(); });
+
+  // ---- FAQ (Akkordeon) ----
+  const faqs = [
+    ['Wie kann ich mein Kind anmelden?','Vereinbaren Sie über das Kontaktformular oder telefonisch ein unverbindliches Erstgespräch. Gemeinsam klären wir die passende Stufe und das weitere Vorgehen.'],
+    ['Wie gross sind die Klassen?','Wir unterrichten bewusst in kleinen Klassen. So können wir jede Schülerin und jeden Schüler individuell fördern und persönlich begleiten.'],
+    ['Bietet Portanova eine Gymivorbereitung an?','Ja. Wir bereiten gezielt auf das Kurz- und Langzeitgymnasium vor – kombiniert mit Mental-Coaching für mehr Sicherheit in der Prüfungssituation.'],
+    ['Was kostet der Schulbesuch?','Das Schulgeld richtet sich nach Stufe und Angebot. Eine transparente Kostenübersicht erhalten Sie gerne auf Anfrage – sprechen Sie uns einfach an.'],
+    ['Gibt es einen Mittagstisch?','Ja, ein betreuter Mittagstisch gehört zum Angebot. Details zu Zeiten und Ablauf besprechen wir im persönlichen Gespräch.'],
+    ['Wie erreiche ich die Schule?','Die Portanova liegt direkt am S-Bahnhof Herrliberg-Feldmeilen – ideal mit dem ÖV erreichbar und nur wenige Schritte vom Zürichsee entfernt.'],
+  ];
+  document.getElementById('faqList').innerHTML = faqs.map(f => `
+    <details class="faq-item reveal">
+      <summary>${f[0]}<span class="chev">${svg('<path d="m6 9 6 6 6-6"/>')}</span></summary>
+      <div class="faq-a">${f[1]}</div>
+    </details>`).join('');
+
+  // ---- Agenda (Termine aus privatschule.ch / calendar.ics) ----
+  const AGENDA = [
+    ["2026-01-16","2026-01-16","Skitag Hoch-Ybrig inkl. Eisstockschiessen","event"],
+    ["2026-02-06","2026-02-06","Schulschluss um 12.00 Uhr","frei"],
+    ["2026-02-09","2026-02-20","Sportferien","ferien"],
+    ["2026-04-02","2026-04-06","Ostern (schulfrei)","frei"],
+    ["2026-04-08","2026-04-08","Besuchsmorgen (Intern)","event"],
+    ["2026-04-17","2026-04-17","Schulschluss um 12.00 Uhr","frei"],
+    ["2026-04-20","2026-05-01","Frühlingsferien","ferien"],
+    ["2026-05-05","2026-05-08","Sprach- und Kulturreise nach Frankreich – 10. SJ","event"],
+    ["2026-05-14","2026-05-15","Auffahrt (schulfrei)","frei"],
+    ["2026-05-25","2026-05-25","Pfingstmontag (schulfrei)","frei"],
+    ["2026-06-14","2026-06-19","Sprach- und Kulturreise nach Wales – Sek 2","event"],
+    ["2026-06-15","2026-06-19","Sprach- und Kulturreise nach München – Sek 1","event"],
+    ["2026-06-17","2026-06-21","Sprach- und Kulturreise nach Südfrankreich – Sek 3","event"],
+    ["2026-06-22","2026-06-25","Sprach- und Kulturreise Bündnerland – 6. Klasse","event"],
+    ["2026-07-06","2026-07-06","Nothelferkurs","event"],
+    ["2026-07-07","2026-07-07","Familien Sommerfest","event"],
+    ["2026-07-08","2026-08-14","Sommerferien","ferien"],
+    ["2026-08-28","2026-08-31","Tenero Sportlager (alle Stufen)","event"],
+    ["2026-09-01","2026-09-01","Schulfrei (ganzer Tag – alle Stufen)","frei"],
+    ["2026-09-14","2026-09-14","Knabenschiessen (ganzer Tag schulfrei)","frei"],
+    ["2026-10-02","2026-10-02","Schulschluss um 12.00 Uhr","frei"],
+    ["2026-10-05","2026-10-16","Herbstferien","ferien"],
+    ["2026-12-18","2026-12-18","Schulschluss um 12.00 Uhr","frei"],
+    ["2026-12-21","2027-01-01","Weihnachtsferien","ferien"],
+    ["2027-02-12","2027-02-12","Schulschluss um 12.00 Uhr","frei"],
+    ["2027-02-15","2027-02-26","Sportferien","ferien"],
+    ["2027-03-25","2027-03-29","Ostern (schulfrei)","frei"],
+    ["2027-04-23","2027-04-23","Schulschluss um 12.00 Uhr","frei"],
+    ["2027-04-26","2027-05-07","Frühlingsferien","ferien"],
+    ["2027-05-17","2027-05-17","Pfingstmontag (schulfrei)","frei"],
+    ["2027-05-18","2027-05-22","Sprach- und Kulturreise nach Südfrankreich","event"],
+    ["2027-07-19","2027-08-20","Sommerferien","ferien"]
+  ];
+  const AG_MON = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
+  const AG_BADGE = {event:'Event', ferien:'Ferien', frei:'Schulfrei'};
+  const AG_MAX = 8;
+  // Relativer Pfad: synchronisiert automatisch live, sobald die Seite auf der
+  // privatschule.ch-Infrastruktur liegt; sonst greift der statische Fallback (AGENDA).
+  const AG_ICS_URL = '/assets/ics/calendar.ics?id=735126070';
+
+  const agCat = t => {
+    const s = t.toLowerCase();
+    if(s.includes('ferien')) return 'ferien';
+    if(['schulfrei','schulschluss','ostern','auffahrt','pfingst','knabenschiessen'].some(w => s.includes(w))) return 'frei';
+    return 'event';
+  };
+  function parseICS(text){
+    text = text.replace(/\r\n/g,'\n').replace(/\n[ \t]/g,''); // Zeilen entfalten
+    const events = []; let cur = null;
+    text.split('\n').forEach(line => {
+      if(line === 'BEGIN:VEVENT') cur = {};
+      else if(line === 'END:VEVENT'){ if(cur) events.push(cur); cur = null; }
+      else if(cur){ const i = line.indexOf(':'); if(i > 0) cur[line.slice(0,i).split(';')[0]] = line.slice(i+1); }
+    });
+    const toISO = v => { const m = (v||'').match(/(\d{4})(\d{2})(\d{2})/); return m ? `${m[1]}-${m[2]}-${m[3]}` : null; };
+    return events.map(e => {
+      const s = toISO(e.DTSTART);
+      let en = toISO(e.DTEND || e.DTSTART);
+      if(en){ const d = new Date(en+'T00:00:00'); d.setDate(d.getDate()-1); en = d.toISOString().slice(0,10); } // DTEND ist exklusiv
+      const title = (e.SUMMARY||'').replace(/\\,/g,',').replace(/\\;/g,';').replace(/\\n/gi,' ').trim();
+      return (s && title) ? [s, en, title, agCat(title)] : null;
+    }).filter(Boolean);
+  }
+
+  function renderAgenda(data){
+    const today = new Date(); today.setHours(0,0,0,0);
+    const fmt = d => `${d.getDate()}. ${AG_MON[d.getMonth()]} ${d.getFullYear()}`;
+    const upcoming = data
+      .map(([s,e,t,c]) => ({s:new Date(s+'T00:00:00'), e:new Date(e+'T00:00:00'), t, c}))
+      .filter(x => x.e >= today)
+      .sort((a,b) => a.s - b.s);
+    const el = document.getElementById('agendaList');
+    const nextEl = document.getElementById('agendaNext');
+    const toggle = document.getElementById('agendaToggle');
+    const when = x => x.e.getTime() !== x.s.getTime() ? `${fmt(x.s)} – ${fmt(x.e)}` : fmt(x.s);
+    if(!upcoming.length){
+      el.innerHTML = '<p class="agenda-empty">Aktuell sind keine kommenden Termine eingetragen.</p>';
+      if(nextEl) nextEl.setAttribute('hidden','');
+      if(toggle) toggle.style.display = 'none';
+      return;
+    }
+    // Highlight: nächster Termin
+    const next = upcoming[0];
+    if(nextEl){
+      nextEl.innerHTML = `
+        <div class="nx-main"><div class="lbl">Nächster Termin</div>
+          <div class="nx-title">${next.t}</div><div class="nx-date">${when(next)}</div></div>
+        <span class="ag-badge ${next.c}">${AG_BADGE[next.c]}</span>`;
+      nextEl.removeAttribute('hidden');
+    }
+    // Liste: restliche kommende Termine
+    const rest = upcoming.slice(1);
+    const itemHtml = x => {
+      const multi = x.e.getTime() !== x.s.getTime();
+      const dateBlock = multi
+        ? `<div class="d">${x.s.getDate()}</div><div class="m">${AG_MON[x.s.getMonth()]}</div><div class="range">bis ${x.e.getDate()}. ${AG_MON[x.e.getMonth()]}</div>`
+        : `<div class="d">${x.s.getDate()}</div><div class="m">${AG_MON[x.s.getMonth()]}</div>`;
+      return `<div class="ag-item">
+        <div class="ag-date">${dateBlock}</div>
+        <div class="ag-body"><div class="ag-title">${x.t}</div><div class="ag-when">${when(x)}</div></div>
+        <span class="ag-badge ${x.c}">${AG_BADGE[x.c]}</span>
+      </div>`;
+    };
+    let expanded = false;
+    const draw = () => {
+      el.innerHTML = (expanded ? rest : rest.slice(0, AG_MAX)).map(itemHtml).join('');
+    };
+    draw();
+    if(toggle){
+      const newToggle = toggle.cloneNode(true); // alte Listener entfernen (bei Re-Render durch Live-Daten)
+      toggle.parentNode.replaceChild(newToggle, toggle);
+      if(rest.length <= AG_MAX){
+        newToggle.style.display = 'none';
+      } else {
+        newToggle.style.display = '';
+        newToggle.textContent = 'Gesamte Agenda ansehen →';
+        newToggle.addEventListener('click', () => {
+          expanded = !expanded;
+          draw();
+          newToggle.textContent = expanded ? 'Weniger anzeigen ↑' : 'Gesamte Agenda ansehen →';
+          if(!expanded) document.getElementById('agenda').scrollIntoView({behavior:'smooth'});
+        });
+      }
+    }
+  }
+
+  renderAgenda(AGENDA); // sofortige Anzeige aus statischen Daten
+  // Versuch, die Agenda live aus dem ICS-Kalender zu aktualisieren (Fallback: statische Daten)
+  fetch(AG_ICS_URL, {cache:'no-cache'})
+    .then(r => r.ok ? r.text() : Promise.reject(r.status))
+    .then(text => { const live = parseICS(text); if(live.length) renderAgenda(live); })
+    .catch(() => {/* offline oder andere Domain: statische Agenda bleibt bestehen */});
+
+  // ---- Reveal on scroll (mit Stagger pro Container) ----
+  const revealEls = [...document.querySelectorAll('.reveal')];
+  const groupCount = new Map();
+  revealEls.forEach(el => {
+    const p = el.parentElement;
+    const i = groupCount.get(p) || 0;
+    groupCount.set(p, i + 1);
+    el.style.setProperty('--reveal-delay', Math.min(i, 8) * 55 + 'ms'); // gestaffeltes Einblenden
+  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  revealEls.forEach(el => io.observe(el));
+  document.querySelectorAll('.clip-reveal').forEach(el => io.observe(el));
+
+  // ---- Scroll-Fortschrittsbalken ----
+  const scrollProg = document.getElementById('scrollProg');
+  if(scrollProg){
+    const updateProg = () => {
+      const d = document.documentElement;
+      const max = d.scrollHeight - d.clientHeight;
+      scrollProg.style.transform = `scaleX(${max > 0 ? d.scrollTop / max : 0})`;
+    };
+    window.addEventListener('scroll', updateProg, {passive:true});
+    updateProg();
+  }
+
+  // ---- Stat-Count-up im Hero ----
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countUp(el, target, dur=1300){
+    const startT = performance.now();
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    (function tick(now){
+      const p = Math.min((now - startT) / dur, 1);
+      el.textContent = Math.round(ease(p) * target);
+      if(p < 1) requestAnimationFrame(tick); else el.textContent = target;
+    })(startT);
+  }
+  const statNums = [...document.querySelectorAll('.hero-stats .num')];
+  if(statNums.length){
+    const numTargets = statNums.map(el => /^\d+$/.test(el.textContent.trim()) ? +el.textContent.trim() : null);
+    if(reduceMotion){ /* Endwerte stehen bereits im HTML */ }
+    else {
+      const statObs = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            statNums.forEach((el, i) => { if(numTargets[i] !== null) countUp(el, numTargets[i]); });
+            obs.disconnect();
+          }
+        });
+      }, {threshold:.4});
+      statObs.observe(document.querySelector('.hero-stats'));
+    }
+  }
+
+  // ---- Bild-Fade-in beim Lazy-Loading ----
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    if(img.complete) img.classList.add('img-in');
+    else { img.addEventListener('load', () => img.classList.add('img-in'), {once:true});
+           img.addEventListener('error', () => img.classList.add('img-in'), {once:true}); }
+  });
+
+  // ---- Reduzierte Bewegung: Hero-Video pausieren ----
+  const heroVideo = document.querySelector('.hero-bg video');
+  if(heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    heroVideo.removeAttribute('autoplay'); heroVideo.pause();
+  }
+
+  // ---- Hero-Video Play/Pause-Steuerung ----
+  const heroCtrl = document.getElementById('heroVidCtrl');
+  if(heroCtrl && heroVideo){
+    const syncCtrl = () => {
+      const paused = heroVideo.paused;
+      heroCtrl.textContent = paused ? '►' : '❚❚';
+      heroCtrl.setAttribute('aria-label', paused ? 'Video abspielen' : 'Video pausieren');
+    };
+    heroCtrl.addEventListener('click', () => { heroVideo.paused ? heroVideo.play() : heroVideo.pause(); });
+    heroVideo.addEventListener('play', syncCtrl);
+    heroVideo.addEventListener('pause', syncCtrl);
+    syncCtrl();
+  } else if(heroCtrl){ heroCtrl.style.display = 'none'; }
+
+  // ---- Contact form (Demo: zeigt Erfolgsmeldung; für echten Versand mit FormSubmit/Netlify verbinden) ----
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let ok = true;
+    form.querySelectorAll('[required]').forEach(i => {
+      const valid = i.value.trim() !== '' && (i.type!=='email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i.value));
+      i.style.borderColor = valid ? '' : '#e06b6b';
+      if(!valid) ok = false;
+    });
+    if(!ok) return;
+    form.querySelectorAll('input,select,textarea,button').forEach(el => el.style.display='none');
+    document.querySelector('.form-note').style.display='none';
+    document.getElementById('formSuccess').style.display='block';
+  });
+</script>
+</body>
+</html>

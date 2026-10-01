@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "eyebrow": "Privatschule am Zürichsee",
+    "title": "Eine Schule, die *Persönlichkeit* in den Mittelpunkt stellt.",
+    "text": "6. Klasse, Sekundarschule Stufe A, 10. Schuljahr und Gymivorbereitung – in der ehemaligen Kaffee-Hag-Fabrik in Feldmeilen, direkt am See und am Bahnhof."
+  },
+  "stats": [
+    {
+      "number": "8",
+      "label": "helle Schulzimmer"
+    },
+    {
+      "number": "25",
+      "label": "Lehr­personen"
+    },
+    {
+      "number": "Sek A",
+      "label": "+ Gymivorbereitung"
+    }
+  ],
+  "leitsatz": "«Wissen vermitteln viele. Wir nehmen uns Zeit für die *Persönlichkeit* dahinter – mit kleinen Klassen, echtem Interesse und Raum zum Wachsen.»",
+  "kontakt": {
+    "email": "info@privatschule.ch",
+    "phone": "+41 43 843 70 43",
+    "street": "General-Wille-Strasse 59",
+    "city": "8706 Feldmeilen ZH"
+  }
+}
